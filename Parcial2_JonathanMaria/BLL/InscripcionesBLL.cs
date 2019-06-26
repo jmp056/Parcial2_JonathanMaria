@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -111,6 +112,25 @@ namespace Parcial2_JonathanMaria.BLL
                 _contexto.Dispose();
             }
             return inscripcion;
+        }
+
+        public static List<Inscripciones> GetList(Expression<Func<Inscripciones, bool>> inscripcion)
+        {
+            List<Inscripciones> Lista = new List<Inscripciones>();
+            Contexto _contexto = new Contexto();
+            try
+            {
+                Lista = _contexto.Inscripciones.Where(inscripcion).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _contexto.Dispose();
+            }
+            return Lista;
         }
     }
 }
