@@ -12,16 +12,14 @@ namespace Parcial2_JonathanMaria.Entidades
         [Key]
         public int InscripcionId { get; set; }
         public DateTime FechaInscripcion { get; set; }
-        public int EstudianteId { get; set; }
-        public List<AsignaturasDetalle> Detalle { get; set; }
-        public decimal Monto { get; set; }
+        public List<InscripcionDetalle> Detalle { get; set; }
+        public decimal Valor { get; set; }
         public Inscripciones()
         {
             InscripcionId = 0;
             FechaInscripcion = DateTime.Now;
-            EstudianteId = 0;
-            this.Detalle = new List<AsignaturasDetalle>();
-            Monto = 0;
+            this.Detalle = new List<InscripcionDetalle>();
+            Valor = 0;
         }
     }
 }

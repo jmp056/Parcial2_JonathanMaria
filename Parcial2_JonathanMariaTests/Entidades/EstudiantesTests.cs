@@ -17,7 +17,7 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         {
             RepositorioBase<Estudiantes> repositorio  = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = new Estudiantes();
-            estudiante.EstudianteId = 2;
+            estudiante.EstudianteId = 1;
             estudiante.FechaIngreso = DateTime.Now;
             estudiante.Nombre = "Jonathan Maria Parra";
             estudiante.Balance = 0;

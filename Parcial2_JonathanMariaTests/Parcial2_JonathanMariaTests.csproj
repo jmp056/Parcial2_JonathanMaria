@@ -63,8 +63,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="BLL\InscripcionesBLLTests.cs" />
+    <Compile Include="Entidades\AsignaturasTests.cs" />
     <Compile Include="Entidades\EstudiantesTests.cs" />
+    <Compile Include="Entidades\InscripcionesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
