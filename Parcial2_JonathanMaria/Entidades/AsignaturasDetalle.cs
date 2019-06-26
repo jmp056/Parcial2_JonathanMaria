@@ -14,11 +14,18 @@ namespace Parcial2_JonathanMaria.Entidades
         public int AsignaturaId { get; set; }
         public string Descripcion { get; set; }
         public int Creditos { get; set; }
+        public decimal Valor { get; set; }
         public int EstudianteId { get; set; }
         [ForeignKey("EstudianteId")]
         public virtual Estudiantes Estudiante { get; set; }
         public decimal Balance { get; set; }
 
-
+        public AsignaturasDetalle(int asignaturaId, string descripcion, int creditos, decimal valor)
+        {
+            AsignaturaId = asignaturaId;
+            Descripcion = descripcion;
+            Creditos = creditos;
+            Valor = valor;
+        }
     }
 }
