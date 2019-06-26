@@ -18,14 +18,12 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.InscripcionId = 1;
             inscripcion.FechaInscripcion = DateTime.Now;
-            inscripcion.EstudianteId = 1;
+            inscripcion.Valor = 500;
 
             inscripcion.Detalle.Add(new InscripcionDetalle()
             {
-                AsignaturaId = 1,
-                Descripcion = "Programacion Aplicada 1",
-                Creditos = 2,
-                Valor = 2 * 560
+                EstudianteId = 1,
+                Balance = 1000
             }
             );
             Assert.IsTrue(InscripcionesBLL.Guardar(inscripcion));
@@ -37,7 +35,6 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.InscripcionId = 1;
             inscripcion.FechaInscripcion = DateTime.Now;
-            inscripcion.EstudianteId = 3;
             Assert.IsTrue(InscripcionesBLL.Modificar(inscripcion));
         }
 
