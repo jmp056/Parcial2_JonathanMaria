@@ -72,6 +72,26 @@ namespace Parcial2_JonathanMaria.BLL
             }
             return paso;
         }
+        public static bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto _contexto = new Contexto();
+            try
+            {
+                var eliminar = _contexto.Inscripciones.Find(id);
+                _contexto.Entry(eliminar).State = EntityState.Deleted;
+                paso = _contexto.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                _contexto.Dispose();
+            }
+            return paso;
+        }
 
         public static Inscripciones Buscar(int id)
         {
