@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2_JonathanMaria.DAL
 {
-    public class Contexto
+    public class Contexto : DbContext
     {
         public DbSet<Asignaturas> Asignaturas { get; set; }
         public DbSet<Estudiantes> Estudiantes { get; set; }
