@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.BuscarButton = new System.Windows.Forms.Button();
-            this.FechaDeIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.EstudianteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.BalanceNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.FechaDeIngreso = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.Label();
             this.Balance = new System.Windows.Forms.Label();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
+            this.BalanceTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscarButton
@@ -53,16 +52,17 @@
             this.BuscarButton.TabIndex = 0;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // FechaDeIngresoDateTimePicker
+            // FechaIngresoDateTimePicker
             // 
-            this.FechaDeIngresoDateTimePicker.CustomFormat = "dd/MM/yy";
-            this.FechaDeIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDeIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaDeIngresoDateTimePicker.Location = new System.Drawing.Point(161, 88);
-            this.FechaDeIngresoDateTimePicker.Name = "FechaDeIngresoDateTimePicker";
-            this.FechaDeIngresoDateTimePicker.Size = new System.Drawing.Size(120, 22);
-            this.FechaDeIngresoDateTimePicker.TabIndex = 1;
+            this.FechaIngresoDateTimePicker.CustomFormat = "dd/MM/yy";
+            this.FechaIngresoDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaIngresoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaIngresoDateTimePicker.Location = new System.Drawing.Point(168, 110);
+            this.FechaIngresoDateTimePicker.Name = "FechaIngresoDateTimePicker";
+            this.FechaIngresoDateTimePicker.Size = new System.Drawing.Size(120, 22);
+            this.FechaIngresoDateTimePicker.TabIndex = 1;
             // 
             // label1
             // 
@@ -77,7 +77,7 @@
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreTextBox.Location = new System.Drawing.Point(161, 133);
+            this.NombreTextBox.Location = new System.Drawing.Point(168, 77);
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(120, 22);
             this.NombreTextBox.TabIndex = 3;
@@ -90,19 +90,11 @@
             this.EstudianteIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.EstudianteIdNumericUpDown.TabIndex = 4;
             // 
-            // BalanceNumericUpDown
-            // 
-            this.BalanceNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BalanceNumericUpDown.Location = new System.Drawing.Point(161, 194);
-            this.BalanceNumericUpDown.Name = "BalanceNumericUpDown";
-            this.BalanceNumericUpDown.Size = new System.Drawing.Size(120, 22);
-            this.BalanceNumericUpDown.TabIndex = 5;
-            // 
             // FechaDeIngreso
             // 
             this.FechaDeIngreso.AutoSize = true;
             this.FechaDeIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDeIngreso.Location = new System.Drawing.Point(5, 88);
+            this.FechaDeIngreso.Location = new System.Drawing.Point(12, 110);
             this.FechaDeIngreso.Name = "FechaDeIngreso";
             this.FechaDeIngreso.Size = new System.Drawing.Size(129, 16);
             this.FechaDeIngreso.TabIndex = 6;
@@ -112,7 +104,7 @@
             // 
             this.Nombre.AutoSize = true;
             this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(5, 136);
+            this.Nombre.Location = new System.Drawing.Point(12, 80);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(63, 16);
             this.Nombre.TabIndex = 7;
@@ -137,6 +129,7 @@
             this.EliminarButton.TabIndex = 9;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
@@ -158,28 +151,36 @@
             this.NuevoButton.TabIndex = 11;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // BalanceTextBox
+            // 
+            this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BalanceTextBox.Location = new System.Drawing.Point(152, 164);
+            this.BalanceTextBox.Name = "BalanceTextBox";
+            this.BalanceTextBox.Size = new System.Drawing.Size(120, 22);
+            this.BalanceTextBox.TabIndex = 12;
             // 
             // rEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 322);
+            this.Controls.Add(this.BalanceTextBox);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.Balance);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.FechaDeIngreso);
-            this.Controls.Add(this.BalanceNumericUpDown);
             this.Controls.Add(this.EstudianteIdNumericUpDown);
             this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FechaDeIngresoDateTimePicker);
+            this.Controls.Add(this.FechaIngresoDateTimePicker);
             this.Controls.Add(this.BuscarButton);
             this.Name = "rEstudiantes";
             this.Text = "rEstudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,16 +189,16 @@
         #endregion
 
         private System.Windows.Forms.Button BuscarButton;
-        private System.Windows.Forms.DateTimePicker FechaDeIngresoDateTimePicker;
+        private System.Windows.Forms.DateTimePicker FechaIngresoDateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.NumericUpDown EstudianteIdNumericUpDown;
-        private System.Windows.Forms.NumericUpDown BalanceNumericUpDown;
         private System.Windows.Forms.Label FechaDeIngreso;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label Balance;
         private System.Windows.Forms.Button EliminarButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.TextBox BalanceTextBox;
     }
 }
