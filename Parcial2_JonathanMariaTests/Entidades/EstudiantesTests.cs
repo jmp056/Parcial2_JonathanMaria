@@ -29,9 +29,9 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         {
             RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
             Estudiantes estudiante = new Estudiantes();
-            estudiante.EstudianteId = 1;
+            estudiante.EstudianteId = 2;
             estudiante.FechaIngreso = DateTime.Now;
-            estudiante.Nombre = "Jonathan Maria";
+            estudiante.Nombre = "Junior Maria Parra";
             estudiante.Balance = 0;
             Assert.IsTrue(repositorio.Modificar(estudiante));
         }
@@ -39,7 +39,7 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         public void Eliminar()
         {
             RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
-            Assert.IsTrue(repositorio.Eliminar(1));
+            Assert.IsTrue(repositorio.Eliminar(2));
         }
 
         [TestMethod()]

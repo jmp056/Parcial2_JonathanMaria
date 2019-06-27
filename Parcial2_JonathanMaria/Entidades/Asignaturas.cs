@@ -13,13 +13,13 @@ namespace Parcial2_JonathanMaria.Entidades
         public int AsignaturaId { get; set; }
         public string Descripcion { get; set; }
         public int Creditos { get; set; }
-        public decimal Valor { get; set; }
+        public decimal Precio { get; set; }
         public Asignaturas()
         {
             AsignaturaId = 0;
             Descripcion = string.Empty;
             Creditos = 0;
-            Valor = 0;
+            Precio = 0;
         }
 
     }

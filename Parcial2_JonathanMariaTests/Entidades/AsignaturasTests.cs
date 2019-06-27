@@ -17,10 +17,10 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
-            asignatura.AsignaturaId = 2;
+            asignatura.AsignaturaId = 1;
             asignatura.Descripcion = "Programacion Aplicada";
             asignatura.Creditos = 1;
-            asignatura.Valor = asignatura.Creditos * 560;
+            asignatura.Precio = asignatura.Creditos * 560;
             Assert.IsTrue(repositorio.Guardar(asignatura));
         }
 
@@ -29,17 +29,17 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas asignatura = new Asignaturas();
-            asignatura.AsignaturaId = 1;
-            asignatura.Descripcion = "Programacion Aplicada";
-            asignatura.Creditos = 2;
-            asignatura.Valor = asignatura.Creditos * 560;
+            asignatura.AsignaturaId = 2;
+            asignatura.Descripcion = "Lab. Programacion Aplicada 1";
+            asignatura.Creditos = 1;
+            asignatura.Precio = asignatura.Creditos * 560;
             Assert.IsTrue(repositorio.Modificar(asignatura));
         }
         [TestMethod()]
         public void Eliminar()
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Assert.IsTrue(repositorio.Eliminar(1));
+            Assert.IsTrue(repositorio.Eliminar(3));
         }
 
         [TestMethod()]

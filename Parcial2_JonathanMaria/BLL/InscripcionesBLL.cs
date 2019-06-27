@@ -16,13 +16,15 @@ namespace Parcial2_JonathanMaria.BLL
         {
             bool paso = false;
             Contexto _contexto = new Contexto();
+            decimal val = 0;
             try
             {
                 if (_contexto.Inscripciones.Add(inscripcion) != null)
                 {
                     foreach(var item in inscripcion.Detalle)
                     {
-                        _contexto.Estudiantes.Find(item.EstudianteId).Balance += item.Valor;
+                        val = _contexto.Asignaturas.Find(item.AsignaturaId).Precio;
+                        inscripcion.Valor += val;
                     }
                 }
                 paso = _contexto.SaveChanges() > 0;
@@ -42,6 +44,7 @@ namespace Parcial2_JonathanMaria.BLL
         {
             bool paso = false;
             Contexto _contexto = new Contexto();
+            decimal val = 0;
             try
             {
                 var Anterior = Buscar(inscripcion.InscripcionId);
@@ -49,8 +52,8 @@ namespace Parcial2_JonathanMaria.BLL
                 {
                     if (!inscripcion.Detalle.ToList().Exists(v => v.AsignaturaId == item.AsignaturaId))
                     {
-                        _contexto.Estudiantes.Find(item.EstudianteId).Balance -= item.Valor;
-                        _contexto.Entry(item).State = EntityState.Deleted;
+                        val = _contexto.Asignaturas.Find(item.AsignaturaId).Precio;
+                        inscripcion.Valor -= val;
                     }
                 }
 

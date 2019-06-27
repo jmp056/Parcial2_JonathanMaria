@@ -21,11 +21,18 @@ namespace Parcial2_JonathanMaria.Entidades
         public string Nombre { get; set; }
         public decimal Balance { get; set; }
 
-        public Inscripciones(int estudianteId, Estudiantes estudiante, string nombre)
+        public Inscripciones()
+        {
+            InscripcionId = 0;
+            FechaInscripcion = DateTime.Now;
+            Detalle = new List<InscripcionDetalle>();
+            Valor = 0;
+        }
+        public Inscripciones(int estudianteId, Estudiantes estudiante, decimal balance)
         {
             EstudianteId = estudianteId;
             Estudiante = estudiante;
-            Nombre = nombre;
+            Balance = balance;
         }
     }
 }

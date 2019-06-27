@@ -18,7 +18,7 @@ namespace Parcial2_JonathanMaria.Entidades
         public virtual Asignaturas Asignatura { get; set; }
         public string Descripcion { get; set; }
         public int Creditos { get; set; }
-        public decimal Valor { get; set; }
+        public decimal Precio { get; set; }
 
         public InscripcionDetalle()
         {
@@ -30,7 +30,7 @@ namespace Parcial2_JonathanMaria.Entidades
             Asignatura = asignatura;
             Descripcion = descripcion;
             Creditos = creditos;
-            Valor = valor;
+            Precio = valor;
         }
     }
 }
