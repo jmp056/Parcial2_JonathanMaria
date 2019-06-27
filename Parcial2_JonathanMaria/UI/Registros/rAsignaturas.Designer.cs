@@ -51,6 +51,7 @@
             this.NuevoButton.TabIndex = 23;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // GuardarButton
             // 
@@ -72,6 +73,7 @@
             this.EliminarButton.TabIndex = 21;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
             // 
             // Nombre
             // 
@@ -118,6 +120,7 @@
             this.BuscarButton.TabIndex = 13;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
             // 
             // CreditosNumericUpDown
             // 

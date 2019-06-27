@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarAsignatuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeInscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,9 @@
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarEstudianteToolStripMenuItem});
+            this.registrarEstudianteToolStripMenuItem,
+            this.registrarAsignatuToolStripMenuItem,
+            this.registroDeInscripcionesToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
@@ -55,9 +59,22 @@
             // registrarEstudianteToolStripMenuItem
             // 
             this.registrarEstudianteToolStripMenuItem.Name = "registrarEstudianteToolStripMenuItem";
-            this.registrarEstudianteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarEstudianteToolStripMenuItem.Text = "Registrar Estudiante";
+            this.registrarEstudianteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registrarEstudianteToolStripMenuItem.Text = "Registro de Estudiantes";
             this.registrarEstudianteToolStripMenuItem.Click += new System.EventHandler(this.RegistrarEstudianteToolStripMenuItem_Click);
+            // 
+            // registrarAsignatuToolStripMenuItem
+            // 
+            this.registrarAsignatuToolStripMenuItem.Name = "registrarAsignatuToolStripMenuItem";
+            this.registrarAsignatuToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registrarAsignatuToolStripMenuItem.Text = "Registro de Asignaturas";
+            this.registrarAsignatuToolStripMenuItem.Click += new System.EventHandler(this.RegistrarAsignatuToolStripMenuItem_Click);
+            // 
+            // registroDeInscripcionesToolStripMenuItem
+            // 
+            this.registroDeInscripcionesToolStripMenuItem.Name = "registroDeInscripcionesToolStripMenuItem";
+            this.registroDeInscripcionesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.registroDeInscripcionesToolStripMenuItem.Text = "Registro de Inscripciones";
             // 
             // MainForm
             // 
@@ -80,6 +97,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem registrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarEstudianteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarAsignatuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeInscripcionesToolStripMenuItem;
     }
 }
 

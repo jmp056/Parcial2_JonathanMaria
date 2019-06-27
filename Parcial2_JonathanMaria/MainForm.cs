@@ -23,5 +23,11 @@ namespace Parcial2_JonathanMaria
             rEstudiantes rE = new rEstudiantes();
             rE.ShowDialog();
         }
+
+        private void RegistrarAsignatuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAsignaturas rA = new rAsignaturas();
+            rA.ShowDialog();
+        }
     }
 }

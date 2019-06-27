@@ -48,29 +48,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Asignaturas Asignatura = repositorio.Buscar((int)AsignaturaIdNumericUpDown.Value);
             return Asignatura != null;
         }
-
-        private void NuevoButton_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-        }
-
-        private void GuardarButton_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas Asignatura;
-            Asignatura = LlenaClase();
-            repositorio.Guardar(Asignatura);
-        }
-
-        private void EliminarButton_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            int id;
-            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
-            repositorio.Eliminar(id);
-        }
-
-        private void BuscarButton_Click(object sender, EventArgs e)
+        private void BuscarButton_Click_1(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             int id;
@@ -78,6 +56,25 @@ namespace Parcial2_JonathanMaria.UI.Registros
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
             Asignatura = repositorio.Buscar(id);
             LlenaCampos(Asignatura);
+        }
+
+        private void NuevoButton_Click_1(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+            Asignaturas Asignatura;
+            Asignatura = LlenaClase();
+            repositorio.Guardar(Asignatura);
+        }
+        private void EliminarButton_Click_1(object sender, EventArgs e)
+        {
+            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+            int id;
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+            repositorio.Eliminar(id);
         }
     }
 }
