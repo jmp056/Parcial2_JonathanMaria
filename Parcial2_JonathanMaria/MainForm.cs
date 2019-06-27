@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Parcial2_JonathanMaria.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Parcial2_JonathanMaria
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void RegistrarEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rEstudiantes rE = new rEstudiantes();
+            rE.ShowDialog();
         }
     }
 }
