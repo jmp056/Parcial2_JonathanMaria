@@ -10,7 +10,7 @@ namespace Parcial2_JonathanMaria.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Asignaturas> Asignaturas { get; set; }
+        //public DbSet<Asignaturas> Asignaturas { get; set; }
         public DbSet<Estudiantes> Estudiantes { get; set; }
         public DbSet<Inscripciones> Inscripciones { get; set; }
         public Contexto() : base("ConStr")
