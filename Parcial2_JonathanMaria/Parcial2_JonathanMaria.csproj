@@ -53,14 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\InscripcionesBLL.cs" />
     <Compile Include="BLL\IRepository.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="Entidades\Asignaturas.cs" />
-    <Compile Include="Entidades\InscripcionDetalle.cs" />
     <Compile Include="Entidades\Estudiantes.cs" />
-    <Compile Include="Entidades\Inscripciones.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

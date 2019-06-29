@@ -35,7 +35,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             AsignaturaIdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             CreditosNumericUpDown.Value = 0;
-            PrecioTextBox.Text = string.Empty;
+            PrecioNumericUpDown.Text = string.Empty;
             this.Detalle = new List<InscripcionDetalle>();
             CargaGrid();
             ValorTextBox.Text = "0";
@@ -46,8 +46,8 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripciones Inscripcion = new Inscripciones();
             Inscripcion.InscripcionId = Convert.ToInt32(InscripcionIdNumericUpDown.Value);
             Inscripcion.FechaInscripcion = FechaDeInscripcionDateTimePicker.Value;
-            Inscripcion.EstudianteId = Convert.ToInt32(EstudianteIdTextBox.Text);
-            Inscripcion.Nombre = NombreTextBox.Text;
+            /*Inscripcion.EstudianteId = Convert.ToInt32(EstudianteIdTextBox.Text);
+            Inscripcion.Nombre = NombreTextBox.Text;*/
             Inscripcion.PrecioCreditos = Convert.ToInt32(PrecioCreditosNumericUpDown.Value);
             Inscripcion.Valor = Convert.ToDecimal(ValorTextBox.Text);
             return Inscripcion;
@@ -57,8 +57,8 @@ namespace Parcial2_JonathanMaria.UI.Registros
         {
             InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
-            EstudianteIdTextBox.Text = Convert.ToString(Inscripcion.EstudianteId);
-            NombreTextBox.Text = Inscripcion.Nombre;
+            /*EstudianteIdTextBox.Text = Convert.ToString(Inscripcion.EstudianteId);
+            NombreTextBox.Text = Inscripcion.Nombre;*/
             PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
             this.Detalle = Inscripcion.Detalle;
             CargaGrid();
@@ -84,16 +84,17 @@ namespace Parcial2_JonathanMaria.UI.Registros
         {
             if (DetalleDataGridView.DataSource != null)
                 this.Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
-                this.Detalle.Add(
+            this.Detalle.Add(
                 new InscripcionDetalle(
-                inscripcionDetalleId: 0,
-                asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
-                descripcion: DescripcionTextBox.Text, 
-                creditos:(int)CreditosNumericUpDown.Value,
-                precio: Convert.ToDecimal(PrecioTextBox.Text)
+                    inscripcionDetalleId: 0,
+                    inscripcionId: (int)InscripcionIdNumericUpDown.Value,
+                    asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
+                    descripcion: DescripcionTextBox.Text,
+                    creditos: (int)CreditosNumericUpDown.Value,
+                    precio: PrecioNumericUpDown.Value
                 )
             );
-            CargaGrid();
+
         }
     }
 }
