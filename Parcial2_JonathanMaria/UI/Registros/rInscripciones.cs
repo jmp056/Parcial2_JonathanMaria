@@ -31,6 +31,11 @@ namespace Parcial2_JonathanMaria.UI.Registros
             FechaDeInscripcionDateTimePicker.Value = DateTime.Now;
             EstudianteIdTextBox.Text = string.Empty;
             NombreTextBox.Text = String.Empty;
+            PrecioCreditosNumericUpDown.Value = 0;
+            AsignaturaIdNumericUpDown.Value = 0;
+            DescripcionTextBox.Text = string.Empty;
+            CreditosNumericUpDown.Value = 0;
+            PrecioTextBox.Text = string.Empty;
             this.Detalle = new List<InscripcionDetalle>();
             CargaGrid();
             ValorTextBox.Text = "0";
@@ -43,7 +48,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripcion.FechaInscripcion = FechaDeInscripcionDateTimePicker.Value;
             Inscripcion.EstudianteId = Convert.ToInt32(EstudianteIdTextBox.Text);
             Inscripcion.Nombre = NombreTextBox.Text;
-            Inscripcion.Detalle = this.Detalle;
+            Inscripcion.PrecioCreditos = Convert.ToInt32(PrecioCreditosNumericUpDown.Value);
             Inscripcion.Valor = Convert.ToDecimal(ValorTextBox.Text);
             return Inscripcion;
         }
@@ -54,6 +59,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
             EstudianteIdTextBox.Text = Convert.ToString(Inscripcion.EstudianteId);
             NombreTextBox.Text = Inscripcion.Nombre;
+            PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
             this.Detalle = Inscripcion.Detalle;
             CargaGrid();
         }
@@ -72,6 +78,22 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripcion = LlenaClase();
             InscripcionesBLL.Guardar(Inscripcion);
             Limpiar();
+        }
+
+        private void AgregarButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.DataSource != null)
+                this.Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
+                this.Detalle.Add(
+                new InscripcionDetalle(
+                inscripcionDetalleId: 0,
+                asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
+                descripcion: DescripcionTextBox.Text, 
+                creditos:(int)CreditosNumericUpDown.Value,
+                precio: Convert.ToDecimal(PrecioTextBox.Text)
+                )
+            );
+            CargaGrid();
         }
     }
 }

@@ -75,6 +75,7 @@
             this.registroDeInscripcionesToolStripMenuItem.Name = "registroDeInscripcionesToolStripMenuItem";
             this.registroDeInscripcionesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.registroDeInscripcionesToolStripMenuItem.Text = "Registro de Inscripciones";
+            this.registroDeInscripcionesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeInscripcionesToolStripMenuItem_Click);
             // 
             // MainForm
             // 

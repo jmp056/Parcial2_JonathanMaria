@@ -16,15 +16,13 @@ namespace Parcial2_JonathanMaria.BLL
         {
             bool paso = false;
             Contexto _contexto = new Contexto();
-            decimal val = 0;
             try
             {
                 if (_contexto.Inscripciones.Add(inscripcion) != null)
                 {
                     foreach(var item in inscripcion.Detalle)
                     {
-                        val = _contexto.Asignaturas.Find(item.AsignaturaId).Precio;
-                        inscripcion.Valor += val;
+                        _contexto.Inscripciones.Find(item.AsignaturaId).Valor += item.Precio;
                     }
                 }
                 paso = _contexto.SaveChanges() > 0;

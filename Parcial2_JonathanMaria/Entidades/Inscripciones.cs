@@ -14,6 +14,7 @@ namespace Parcial2_JonathanMaria.Entidades
         public int InscripcionId { get; set; }
         public DateTime FechaInscripcion { get; set; }
         public List<InscripcionDetalle> Detalle { get; set; }
+        public decimal PrecioCreditos { get; set; }
         public decimal Valor { get; set; }
         public int EstudianteId { get; set; }
         [ForeignKey("EstudianteId")]
@@ -26,13 +27,8 @@ namespace Parcial2_JonathanMaria.Entidades
             InscripcionId = 0;
             FechaInscripcion = DateTime.Now;
             Detalle = new List<InscripcionDetalle>();
+            PrecioCreditos = 0;
             Valor = 0;
-        }
-        public Inscripciones(int estudianteId, Estudiantes estudiante, decimal balance)
-        {
-            EstudianteId = estudianteId;
-            Estudiante = estudiante;
-            Balance = balance;
         }
     }
 }
