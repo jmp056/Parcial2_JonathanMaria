@@ -69,7 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UI\Registros\rAsignaturas.cs" />
+    <Compile Include="UI\Registros\rAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\Registros\rAsignaturas.Designer.cs">
       <DependentUpon>rAsignaturas.cs</DependentUpon>
     </Compile>

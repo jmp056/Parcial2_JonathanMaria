@@ -12,13 +12,12 @@ using System.Windows.Forms;
 
 namespace Parcial2_JonathanMaria.UI.Registros
 {
-    /*public partial class rAsignaturas : Form
+    public partial class rAsignaturas : Form
     {
         public rAsignaturas()
         {
             InitializeComponent();
         }
-
         private void Limpiar()
         {
             AsignaturaIdNumericUpDown.Value = 0;
@@ -42,13 +41,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             CreditosNumericUpDown.Value = Asignatura.Creditos;
         }
 
-        private bool ExisteEnLaBaseDeDatos()
-        {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            Asignaturas Asignatura = repositorio.Buscar((int)AsignaturaIdNumericUpDown.Value);
-            return Asignatura != null;
-        }
-        private void BuscarButton_Click_1(object sender, EventArgs e)
+        private void BuscarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             int id;
@@ -58,23 +51,27 @@ namespace Parcial2_JonathanMaria.UI.Registros
             LlenaCampos(Asignatura);
         }
 
-        private void NuevoButton_Click_1(object sender, EventArgs e)
+        private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas Asignatura;
             Asignatura = LlenaClase();
             repositorio.Guardar(Asignatura);
+            Limpiar();
         }
-        private void EliminarButton_Click_1(object sender, EventArgs e)
+
+        private void EliminarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             int id;
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
             repositorio.Eliminar(id);
+            Limpiar();
         }
-    }*/
+    }
 }
