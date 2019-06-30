@@ -17,9 +17,11 @@ namespace Parcial2_JonathanMaria.UI.Registros
         public rAsignaturas()
         {
             InitializeComponent();
+            EliminarButton.Enabled = false;
         }
         private void Limpiar()
         {
+            MyErrorProvider.Clear();
             AsignaturaIdNumericUpDown.Value = 0;
             DescripcionTextBox.Text = string.Empty;
             CreditosNumericUpDown.Value = 0;
@@ -43,8 +45,9 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private bool Validar()
         {
+            MyErrorProvider.Clear();
             bool paso = true;
-            if(DescripcionTextBox.Text == string.Empty)
+            if (DescripcionTextBox.Text == string.Empty)
             {
                 MyErrorProvider.SetError(DescripcionTextBox, "El campo \"Descripcion\" no puede estar vacio");
                 DescripcionTextBox.Focus();
@@ -74,15 +77,19 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Asignaturas Asignatura = new Asignaturas();
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
             Asignatura = repositorio.Buscar(id);
-            if(Asignatura != null)
+            if (Asignatura != null)
+            {
                 LlenaCampos(Asignatura);
+                EliminarButton.Enabled = true;
+            }
             else
                 MessageBox.Show("Asignatura no encontrada!");
-            }
+        }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            EliminarButton.Enabled = false;
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -93,19 +100,60 @@ namespace Parcial2_JonathanMaria.UI.Registros
             if (!Validar())
                 return;
             Asignatura = LlenaClase();
-
-
-            repositorio.Guardar(Asignatura);
-            Limpiar();
+            if (AsignaturasBLL.Existe(Asignatura.Descripcion) == true)
+            {
+                MessageBox.Show("Ya esta asignatura existe!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                if (AsignaturaIdNumericUpDown.Value == 0)
+                {
+                    paso = repositorio.Guardar(Asignatura);
+                    MessageBox.Show("Guardada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    if (!ExisteEnLaBaseDeDatos())
+                    {
+                        MessageBox.Show("No se puede modificar una asignatura que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (MessageBox.Show("Esta seguro que desea modificar esta asignatura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    {
+                        paso = repositorio.Modificar(Asignatura);
+                        MessageBox.Show("Modificada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                        return;
+                }
+                if (!paso)
+                    MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
-            int id;
-            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
-            repositorio.Eliminar(id);
-            Limpiar();
+            if (MessageBox.Show("Esta seguro que desea eliminar esta asignatura?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
+                MyErrorProvider.Clear();
+                int id;
+                int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+                if (repositorio.Eliminar(id))
+                {
+                    MessageBox.Show("La asignatura fue eliminada", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    EliminarButton.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("La asignatura no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
         }
     }
 }
