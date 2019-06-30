@@ -40,17 +40,26 @@
             this.ValorTextBox = new System.Windows.Forms.TextBox();
             this.RemoverAsignaturaButton = new System.Windows.Forms.Button();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Descripcion = new System.Windows.Forms.Label();
+            this.Creditos = new System.Windows.Forms.Label();
             this.AgregarButton = new System.Windows.Forms.Button();
-            this.PrecioNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.CreditosNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.EstudianteId = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.Label();
+            this.NombreTextBox = new System.Windows.Forms.TextBox();
+            this.EstudianteIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.PrecioDeLosCreditos = new System.Windows.Forms.Label();
+            this.PrecioCreditosNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.AsignaturaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.Valor = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioCreditosNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaDeInscripcion
@@ -79,7 +88,7 @@
             this.InscripcionId.Name = "InscripcionId";
             this.InscripcionId.Size = new System.Drawing.Size(100, 16);
             this.InscripcionId.TabIndex = 8;
-            this.InscripcionId.Text = "Inscripcion Id";
+            this.InscripcionId.Text = "Id Inscripcion";
             // 
             // FechaDeInscripcionDateTimePicker
             // 
@@ -110,6 +119,7 @@
             this.GuardarButton.TabIndex = 14;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -142,7 +152,7 @@
             // ValorTextBox
             // 
             this.ValorTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ValorTextBox.Location = new System.Drawing.Point(508, 376);
+            this.ValorTextBox.Location = new System.Drawing.Point(489, 369);
             this.ValorTextBox.Name = "ValorTextBox";
             this.ValorTextBox.Size = new System.Drawing.Size(100, 22);
             this.ValorTextBox.TabIndex = 17;
@@ -160,35 +170,35 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionTextBox.Location = new System.Drawing.Point(172, 239);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(159, 239);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(35, 22);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(48, 22);
             this.DescripcionTextBox.TabIndex = 24;
             // 
-            // label4
+            // Descripcion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 245);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 16);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Descripcion";
+            this.Descripcion.AutoSize = true;
+            this.Descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Descripcion.Location = new System.Drawing.Point(37, 245);
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Size = new System.Drawing.Size(91, 16);
+            this.Descripcion.TabIndex = 25;
+            this.Descripcion.Text = "Descripcion";
             // 
-            // label6
+            // Creditos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(312, 245);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 16);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Valor";
+            this.Creditos.AutoSize = true;
+            this.Creditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Creditos.Location = new System.Drawing.Point(279, 211);
+            this.Creditos.Name = "Creditos";
+            this.Creditos.Size = new System.Drawing.Size(66, 16);
+            this.Creditos.TabIndex = 27;
+            this.Creditos.Text = "Creditos";
             // 
             // AgregarButton
             // 
             this.AgregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarButton.Location = new System.Drawing.Point(461, 238);
+            this.AgregarButton.Location = new System.Drawing.Point(489, 228);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(38, 23);
             this.AgregarButton.TabIndex = 33;
@@ -196,63 +206,123 @@
             this.AgregarButton.UseVisualStyleBackColor = true;
             this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
-            // PrecioNumericUpDown
+            // CreditosNumericUpDown
             // 
-            this.PrecioNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecioNumericUpDown.Location = new System.Drawing.Point(359, 238);
-            this.PrecioNumericUpDown.Name = "PrecioNumericUpDown";
-            this.PrecioNumericUpDown.Size = new System.Drawing.Size(58, 22);
-            this.PrecioNumericUpDown.TabIndex = 36;
+            this.CreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(351, 211);
+            this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
+            this.CreditosNumericUpDown.Size = new System.Drawing.Size(58, 22);
+            this.CreditosNumericUpDown.TabIndex = 36;
+            // 
+            // EstudianteId
+            // 
+            this.EstudianteId.AutoSize = true;
+            this.EstudianteId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstudianteId.Location = new System.Drawing.Point(46, 120);
+            this.EstudianteId.Name = "EstudianteId";
+            this.EstudianteId.Size = new System.Drawing.Size(98, 16);
+            this.EstudianteId.TabIndex = 38;
+            this.EstudianteId.Text = "Id Estudiante";
+            // 
+            // Nombre
+            // 
+            this.Nombre.AutoSize = true;
+            this.Nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.Location = new System.Drawing.Point(222, 120);
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Size = new System.Drawing.Size(63, 16);
+            this.Nombre.TabIndex = 40;
+            this.Nombre.Text = "Nombre";
+            // 
+            // NombreTextBox
+            // 
+            this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombreTextBox.Location = new System.Drawing.Point(291, 114);
+            this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.Size = new System.Drawing.Size(70, 22);
+            this.NombreTextBox.TabIndex = 39;
+            // 
+            // EstudianteIdNumericUpDown
+            // 
+            this.EstudianteIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstudianteIdNumericUpDown.Location = new System.Drawing.Point(150, 114);
+            this.EstudianteIdNumericUpDown.Name = "EstudianteIdNumericUpDown";
+            this.EstudianteIdNumericUpDown.Size = new System.Drawing.Size(57, 22);
+            this.EstudianteIdNumericUpDown.TabIndex = 41;
+            // 
+            // PrecioDeLosCreditos
+            // 
+            this.PrecioDeLosCreditos.AutoSize = true;
+            this.PrecioDeLosCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioDeLosCreditos.Location = new System.Drawing.Point(46, 168);
+            this.PrecioDeLosCreditos.Name = "PrecioDeLosCreditos";
+            this.PrecioDeLosCreditos.Size = new System.Drawing.Size(160, 16);
+            this.PrecioDeLosCreditos.TabIndex = 42;
+            this.PrecioDeLosCreditos.Text = "Precio de los creditos";
+            // 
+            // PrecioCreditosNumericUpDown
+            // 
+            this.PrecioCreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioCreditosNumericUpDown.Location = new System.Drawing.Point(228, 166);
+            this.PrecioCreditosNumericUpDown.Name = "PrecioCreditosNumericUpDown";
+            this.PrecioCreditosNumericUpDown.Size = new System.Drawing.Size(57, 22);
+            this.PrecioCreditosNumericUpDown.TabIndex = 43;
+            // 
+            // AsignaturaIdNumericUpDown
+            // 
+            this.AsignaturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(137, 211);
+            this.AsignaturaIdNumericUpDown.Name = "AsignaturaIdNumericUpDown";
+            this.AsignaturaIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.AsignaturaIdNumericUpDown.TabIndex = 45;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 120);
+            this.label1.Location = new System.Drawing.Point(16, 213);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 16);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Descripcion";
+            this.label1.Size = new System.Drawing.Size(99, 16);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Id Asignatura";
+            // 
+            // Valor
+            // 
+            this.Valor.AutoSize = true;
+            this.Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Valor.Location = new System.Drawing.Point(267, 259);
+            this.Valor.Name = "Valor";
+            this.Valor.Size = new System.Drawing.Size(97, 16);
+            this.Valor.TabIndex = 47;
+            this.Valor.Text = "Precio (RD$)";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(148, 114);
+            this.textBox1.Location = new System.Drawing.Point(370, 253);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(35, 22);
-            this.textBox1.TabIndex = 37;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(222, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Descripcion";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(324, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(35, 22);
-            this.textBox2.TabIndex = 39;
+            this.textBox1.Size = new System.Drawing.Size(48, 22);
+            this.textBox1.TabIndex = 46;
             // 
             // rInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Valor);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.PrecioNumericUpDown);
+            this.Controls.Add(this.AsignaturaIdNumericUpDown);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PrecioCreditosNumericUpDown);
+            this.Controls.Add(this.PrecioDeLosCreditos);
+            this.Controls.Add(this.EstudianteIdNumericUpDown);
+            this.Controls.Add(this.Nombre);
+            this.Controls.Add(this.NombreTextBox);
+            this.Controls.Add(this.EstudianteId);
+            this.Controls.Add(this.CreditosNumericUpDown);
             this.Controls.Add(this.AgregarButton);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Creditos);
+            this.Controls.Add(this.Descripcion);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.RemoverAsignaturaButton);
             this.Controls.Add(this.ValorTextBox);
@@ -269,7 +339,10 @@
             this.Text = "rInscripciones";
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PrecioNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PrecioCreditosNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,13 +362,19 @@
         private System.Windows.Forms.TextBox ValorTextBox;
         private System.Windows.Forms.Button RemoverAsignaturaButton;
         private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Descripcion;
+        private System.Windows.Forms.Label Creditos;
         private System.Windows.Forms.Button AgregarButton;
-        private System.Windows.Forms.NumericUpDown PrecioNumericUpDown;
+        private System.Windows.Forms.NumericUpDown CreditosNumericUpDown;
+        private System.Windows.Forms.Label EstudianteId;
+        private System.Windows.Forms.Label Nombre;
+        private System.Windows.Forms.TextBox NombreTextBox;
+        private System.Windows.Forms.NumericUpDown EstudianteIdNumericUpDown;
+        private System.Windows.Forms.Label PrecioDeLosCreditos;
+        private System.Windows.Forms.NumericUpDown PrecioCreditosNumericUpDown;
+        private System.Windows.Forms.NumericUpDown AsignaturaIdNumericUpDown;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Valor;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

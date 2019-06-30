@@ -70,10 +70,15 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 iDID: 0,
                 inscripcionId: (int)InscripcionIdNumericUpDown.Value,
                 descripcion: DescripcionTextBox.Text,
-                precio: PrecioNumericUpDown.Value
+                precio: CreditosNumericUpDown.Value
             )
             );
             CargaGrid();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
