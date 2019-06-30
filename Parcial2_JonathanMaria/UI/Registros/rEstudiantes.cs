@@ -63,6 +63,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Estudiantes Estudiante;
             Estudiante = LlenaClase();
             repositorio.Guardar(Estudiante);
+            Limpiar();
         }
 
         private void EliminarButton_Click(object sender, EventArgs e)

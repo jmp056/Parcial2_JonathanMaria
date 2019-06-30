@@ -53,7 +53,7 @@
             this.AsignaturaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.Valor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.PrecioTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
@@ -296,13 +296,13 @@
             this.Valor.TabIndex = 47;
             this.Valor.Text = "Precio (RD$)";
             // 
-            // textBox1
+            // PrecioTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(370, 253);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(48, 22);
-            this.textBox1.TabIndex = 46;
+            this.PrecioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecioTextBox.Location = new System.Drawing.Point(370, 253);
+            this.PrecioTextBox.Name = "PrecioTextBox";
+            this.PrecioTextBox.Size = new System.Drawing.Size(48, 22);
+            this.PrecioTextBox.TabIndex = 46;
             // 
             // rInscripciones
             // 
@@ -310,7 +310,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 450);
             this.Controls.Add(this.Valor);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.AsignaturaIdNumericUpDown);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PrecioCreditosNumericUpDown);
@@ -375,6 +375,6 @@
         private System.Windows.Forms.NumericUpDown AsignaturaIdNumericUpDown;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Valor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox PrecioTextBox;
     }
 }

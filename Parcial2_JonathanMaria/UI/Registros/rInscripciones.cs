@@ -32,6 +32,14 @@ namespace Parcial2_JonathanMaria.UI.Registros
         {
             InscripcionIdNumericUpDown.Value = 0;
             FechaDeInscripcionDateTimePicker.Value = DateTime.Now;
+            EstudianteIdNumericUpDown.Value = 0;
+            NombreTextBox.Text = string.Empty;
+            PrecioCreditosNumericUpDown.Value = 0;
+            AsignaturaIdNumericUpDown.Value = 0;
+            DescripcionTextBox.Text = string.Empty;
+            PrecioCreditosNumericUpDown.Value = 0;
+            PrecioTextBox.Text = string.Empty;
+            ValorTextBox.Text = string.Empty;
 
             this.Detalle = new List<InscripcionDetalle>();
             CargaGrid();
@@ -42,6 +50,9 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripciones Inscripcion = new Inscripciones();
             Inscripcion.InscripcionId = Convert.ToInt32(InscripcionIdNumericUpDown.Value);
             Inscripcion.FechaInscripcion = FechaDeInscripcionDateTimePicker.Value;
+            Inscripcion.EstudianteId = Convert.ToInt32(EstudianteIdNumericUpDown.Value);
+            Inscripcion.PrecioCreditos = Convert.ToDecimal(PrecioCreditosNumericUpDown.Value);
+            Inscripcion.Valor = Convert.ToDecimal(ValorTextBox.Text);
             Inscripcion.Detalle = this.Detalle;
             return Inscripcion;
         }
@@ -50,27 +61,27 @@ namespace Parcial2_JonathanMaria.UI.Registros
         {
             InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
-            //Detalle = new List<InscripcionDetalle>();
+            EstudianteIdNumericUpDown.Value = Inscripcion.EstudianteId;
+            PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
+            ValorTextBox.Text = Convert.ToString(Inscripcion.Valor);
+            Detalle = new List<InscripcionDetalle>();
             this.Detalle = Inscripcion.Detalle;
             CargaGrid();
         }
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-            List<InscripcionDetalle> Detalle = new List<InscripcionDetalle>();
-
-            if (DetalleDataGridView.DataSource != null)
-            {
-                Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
-            }
+            //List<InscripcionDetalle> Detalle = new List<InscripcionDetalle>();
             if (DetalleDataGridView.DataSource != null)
                 Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
             this.Detalle.Add(
                 new InscripcionDetalle(
                 iDID: 0,
                 inscripcionId: (int)InscripcionIdNumericUpDown.Value,
+                asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
                 descripcion: DescripcionTextBox.Text,
-                precio: CreditosNumericUpDown.Value
+                creditos: (int)CreditosNumericUpDown.Value,
+                precio: Convert.ToDecimal(PrecioTextBox.Text)
             )
             );
             CargaGrid();
@@ -78,7 +89,10 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-
+            Inscripciones Inscripcion;
+            Inscripcion = LlenaClase();
+            InscripcionesBLL.Guardar(Inscripcion);
+            Limpiar();
         }
     }
 }
