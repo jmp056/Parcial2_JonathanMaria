@@ -76,6 +76,64 @@ namespace Parcial2_JonathanMaria.UI.Registros
             CargaGrid();
         }
 
+        private bool Validar()
+        {
+            MyErrorProvider.Clear();
+            bool paso = true;
+            if(FechaDeInscripcionDateTimePicker.Value > DateTime.Now)
+            {
+                MyErrorProvider.SetError(FechaDeInscripcionDateTimePicker, "La fecha de inscripcion no puede ser mayor a la fecha de hoy");
+                FechaDeInscripcionDateTimePicker.Focus();
+                paso = false;
+            }
+            if(NombreTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(NombreTextBox, "Debe seleccionar un estudiante");
+                FechaDeInscripcionDateTimePicker.Focus();
+                paso = false;
+            }
+            if(PrecioCreditosNumericUpDown.Value < 1 || PrecioCreditosNumericUpDown.Value > 5000)
+            {
+                MyErrorProvider.SetError(PrecioCreditosNumericUpDown, "El precio de los creditos debe estar entre 1 y 5,000");
+                PrecioCreditosNumericUpDown.Focus();
+                paso = false;
+            }
+            if (this.Detalle.Count == 0)
+            {
+                MyErrorProvider.SetError(DetalleDataGridView, "Debe agregar alguna asignatura!!!");
+                AsignaturaIdNumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
+            Inscripciones Inscripcion = repositorio.Buscar((int)InscripcionIdNumericUpDown.Value);
+            return Inscripcion != null;
+        }
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            MyErrorProvider.Clear();
+            int id;
+            Inscripciones Inscripcion = new Inscripciones();
+            int.TryParse(InscripcionIdNumericUpDown.Text, out id);
+            Inscripcion = InscripcionesBLL.Buscar(id);
+            if (Inscripcion != null)
+            {
+                LlenaCampos(Inscripcion);
+                EliminarButton.Enabled = true;
+            }
+            else
+                MessageBox.Show("Inscripcion no encontrada!");
+
+        }
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            EliminarButton.Enabled = false;
+        }
+
         private void AgregarButton_Click(object sender, EventArgs e)
         {
             if (DetalleDataGridView.DataSource != null)
@@ -97,21 +155,39 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
             Inscripciones Inscripcion;
+            bool paso = false;
+            if (!Validar())
+                return;
             Inscripcion = LlenaClase();
-            InscripcionesBLL.Guardar(Inscripcion);
-            Limpiar();
+            if(InscripcionIdNumericUpDown.Value == 0)
+            {
+                paso = InscripcionesBLL.Guardar(Inscripcion);
+                MessageBox.Show("Guardada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                if (!ExisteEnLaBaseDeDatos())
+                {
+                    MessageBox.Show("No se puede modificar una inscripcion que no existe", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("Esta seguro que desea modificar esta inscripcion?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                {
+                    paso = InscripcionesBLL.Modificar(Inscripcion);
+                    MessageBox.Show("Modificado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                    return;
+            }
+            if (!paso)
+                MessageBox.Show("Error al guardar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
-        private void BuscarButton_Click(object sender, EventArgs e)
-        {
-            int id;
-            Inscripciones Inscripcion = new Inscripciones();
-            int.TryParse(InscripcionIdNumericUpDown.Text, out id);
-            Inscripcion = InscripcionesBLL.Buscar(id);
-            LlenaCampos(Inscripcion);
-        }
+
 
         private void PrecioCreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
@@ -134,5 +210,25 @@ namespace Parcial2_JonathanMaria.UI.Registros
             CreditosNumericUpDown.Value = Asignatura.Creditos;
         }
 
+        private void EliminarButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta seguro que desea eliminar esta inscripcion?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+            {
+                MyErrorProvider.Clear();
+                int id;
+                int.TryParse(EstudianteIdNumericUpDown.Text, out id);
+                if (InscripcionesBLL.Eliminar(id))
+                {
+                    MessageBox.Show("La inscripcion fue eliminada", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                    EliminarButton.Enabled = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("La inscripcion no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+        }
     }
 }

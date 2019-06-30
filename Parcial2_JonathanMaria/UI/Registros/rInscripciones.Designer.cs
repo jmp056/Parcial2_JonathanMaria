@@ -113,6 +113,7 @@
             this.NuevoButton.TabIndex = 15;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // GuardarButton
             // 
@@ -134,6 +135,7 @@
             this.EliminarButton.TabIndex = 13;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // BuscarButton
             // 
