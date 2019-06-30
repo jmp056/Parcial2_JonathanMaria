@@ -106,7 +106,6 @@
             this.GuardarButton.TabIndex = 14;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -127,7 +126,6 @@
             this.BuscarButton.TabIndex = 12;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // DetalleDataGridView
             // 

@@ -26,8 +26,8 @@ namespace Parcial2_JonathanMaria
 
         private void RegistrarAsignatuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            rAsignaturas rA = new rAsignaturas();
-            rA.ShowDialog();
+            /*rAsignaturas rA = new rAsignaturas();
+            rA.ShowDialog();*/
         }
 
         private void RegistroDeInscripcionesToolStripMenuItem_Click(object sender, EventArgs e)

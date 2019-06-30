@@ -11,14 +11,14 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        /*protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
 
         #region Windows Form Designer generated code
 
@@ -40,7 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
-            this.SuspendLayout();
+            //this.SuspendLayout();
             // 
             // NuevoButton
             // 
@@ -51,7 +51,7 @@
             this.NuevoButton.TabIndex = 23;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
+            //this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click_1);
             // 
             // GuardarButton
             // 
@@ -62,7 +62,7 @@
             this.GuardarButton.TabIndex = 22;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            //this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // EliminarButton
             // 
@@ -73,7 +73,7 @@
             this.EliminarButton.TabIndex = 21;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
+            //this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click_1);
             // 
             // Nombre
             // 
@@ -120,7 +120,7 @@
             this.BuscarButton.TabIndex = 13;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
+            //this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click_1);
             // 
             // CreditosNumericUpDown
             // 
@@ -142,7 +142,7 @@
             // 
             // rAsignaturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+  /*          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CreditosNumericUpDown);
@@ -160,7 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
+            this.PerformLayout();*/
 
         }
 

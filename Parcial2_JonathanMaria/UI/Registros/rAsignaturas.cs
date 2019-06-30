@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Parcial2_JonathanMaria.UI.Registros
 {
-    public partial class rAsignaturas : Form
+    /*public partial class rAsignaturas : Form
     {
         public rAsignaturas()
         {
@@ -76,5 +76,5 @@ namespace Parcial2_JonathanMaria.UI.Registros
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
             repositorio.Eliminar(id);
         }
-    }
+    }*/
 }
