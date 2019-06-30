@@ -17,7 +17,11 @@ namespace Parcial2_JonathanMaria.BLL
             try
             {
                 if (db.Inscripciones.Add(Inscripcion) != null)
+                {
+                    db.Estudiantes.Find(Inscripcion.EstudianteId).Balance += Inscripcion.Valor;
                     paso = db.SaveChanges() > 0;
+                }
+                   
             }
             catch (Exception)
             {

@@ -97,6 +97,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
             Inscripciones Inscripcion;
             Inscripcion = LlenaClase();
             InscripcionesBLL.Guardar(Inscripcion);
@@ -105,7 +106,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            //RepositorioBase < Inscripciones > = new RepositorioBase<Inscripciones>;
             int id;
             Inscripciones Inscripcion = new Inscripciones();
             int.TryParse(InscripcionIdNumericUpDown.Text, out id);
@@ -121,6 +121,17 @@ namespace Parcial2_JonathanMaria.UI.Registros
         private void CreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
+        }
+
+        private void SeleccionarAsignaturaButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
+            int id;
+            Asignaturas Asignatura = new Asignaturas();
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+            Asignatura = Repositorio.Buscar(id);
+            DescripcionTextBox.Text = Asignatura.Descripcion;
+            CreditosNumericUpDown.Value = Asignatura.Creditos;
         }
     }
 }

@@ -19,9 +19,6 @@ namespace Parcial2_JonathanMaria.Entidades
         public int EstudianteId { get; set; }
         [ForeignKey("EstudianteId")]
         public virtual Estudiantes Estudiante{ get; set; }
-        public int AsignaturaId { get; set; }
-        [ForeignKey("AsignaturaId")]
-        public virtual Asignaturas Asignatura{ get; set; }
 
         public Inscripciones()
         {

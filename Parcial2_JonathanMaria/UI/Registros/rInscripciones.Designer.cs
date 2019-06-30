@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FechaDeInscripcion = new System.Windows.Forms.Label();
             this.InscripcionIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.InscripcionId = new System.Windows.Forms.Label();
@@ -54,12 +55,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Valor = new System.Windows.Forms.Label();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
+            this.SeleccionarAsignaturaButton = new System.Windows.Forms.Button();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioCreditosNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaDeInscripcion
@@ -190,7 +194,7 @@
             // 
             this.Creditos.AutoSize = true;
             this.Creditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Creditos.Location = new System.Drawing.Point(279, 211);
+            this.Creditos.Location = new System.Drawing.Point(360, 210);
             this.Creditos.Name = "Creditos";
             this.Creditos.Size = new System.Drawing.Size(66, 16);
             this.Creditos.TabIndex = 27;
@@ -199,7 +203,7 @@
             // AgregarButton
             // 
             this.AgregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarButton.Location = new System.Drawing.Point(489, 228);
+            this.AgregarButton.Location = new System.Drawing.Point(570, 227);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(38, 23);
             this.AgregarButton.TabIndex = 33;
@@ -210,7 +214,7 @@
             // CreditosNumericUpDown
             // 
             this.CreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreditosNumericUpDown.Location = new System.Drawing.Point(351, 211);
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(432, 210);
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(58, 22);
             this.CreditosNumericUpDown.TabIndex = 36;
@@ -293,7 +297,7 @@
             // 
             this.Valor.AutoSize = true;
             this.Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Valor.Location = new System.Drawing.Point(267, 259);
+            this.Valor.Location = new System.Drawing.Point(348, 258);
             this.Valor.Name = "Valor";
             this.Valor.Size = new System.Drawing.Size(97, 16);
             this.Valor.TabIndex = 47;
@@ -302,16 +306,32 @@
             // PrecioTextBox
             // 
             this.PrecioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecioTextBox.Location = new System.Drawing.Point(370, 253);
+            this.PrecioTextBox.Location = new System.Drawing.Point(451, 252);
             this.PrecioTextBox.Name = "PrecioTextBox";
             this.PrecioTextBox.Size = new System.Drawing.Size(48, 22);
             this.PrecioTextBox.TabIndex = 46;
+            // 
+            // SeleccionarAsignaturaButton
+            // 
+            this.SeleccionarAsignaturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SeleccionarAsignaturaButton.Location = new System.Drawing.Point(270, 211);
+            this.SeleccionarAsignaturaButton.Name = "SeleccionarAsignaturaButton";
+            this.SeleccionarAsignaturaButton.Size = new System.Drawing.Size(38, 23);
+            this.SeleccionarAsignaturaButton.TabIndex = 48;
+            this.SeleccionarAsignaturaButton.Text = "Seleccionar Asignatura";
+            this.SeleccionarAsignaturaButton.UseVisualStyleBackColor = true;
+            this.SeleccionarAsignaturaButton.Click += new System.EventHandler(this.SeleccionarAsignaturaButton_Click);
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 450);
+            this.Controls.Add(this.SeleccionarAsignaturaButton);
             this.Controls.Add(this.Valor);
             this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.AsignaturaIdNumericUpDown);
@@ -346,6 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PrecioCreditosNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,5 +400,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Valor;
         private System.Windows.Forms.TextBox PrecioTextBox;
+        private System.Windows.Forms.Button SeleccionarAsignaturaButton;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
