@@ -41,15 +41,44 @@ namespace Parcial2_JonathanMaria.UI.Registros
             CreditosNumericUpDown.Value = Asignatura.Creditos;
         }
 
+        private bool Validar()
+        {
+            bool paso = true;
+            if(DescripcionTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(DescripcionTextBox, "El campo \"Descripcion\" no puede estar vacio");
+                DescripcionTextBox.Focus();
+                paso = false;
+            }
+            if (CreditosNumericUpDown.Value < 1 || CreditosNumericUpDown.Value > 5)
+            {
+                MyErrorProvider.SetError(CreditosNumericUpDown, "La cantidad de creditos de una materia tienen que estar entre 1 y 5");
+                CreditosNumericUpDown.Focus();
+                paso = false;
+            }
+            return paso;
+        }
+
+        private bool ExisteEnLaBaseDeDatos()
+        {
+            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
+            Asignaturas Asignatura = Repositorio.Buscar((int)AsignaturaIdNumericUpDown.Value);
+            return Asignatura != null;
+        }
+
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+            MyErrorProvider.Clear();
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             int id;
             Asignaturas Asignatura = new Asignaturas();
             int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
             Asignatura = repositorio.Buscar(id);
-            LlenaCampos(Asignatura);
-        }
+            if(Asignatura != null)
+                LlenaCampos(Asignatura);
+            else
+                MessageBox.Show("Asignatura no encontrada!");
+            }
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
@@ -60,7 +89,12 @@ namespace Parcial2_JonathanMaria.UI.Registros
         {
             RepositorioBase<Asignaturas> repositorio = new RepositorioBase<Asignaturas>();
             Asignaturas Asignatura;
+            bool paso = false;
+            if (!Validar())
+                return;
             Asignatura = LlenaClase();
+
+
             repositorio.Guardar(Asignatura);
             Limpiar();
         }

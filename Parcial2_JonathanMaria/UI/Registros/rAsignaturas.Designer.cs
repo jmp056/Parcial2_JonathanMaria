@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
@@ -38,8 +39,10 @@
             this.AsignaturaIdLabel = new System.Windows.Forms.Label();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.CreditosNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // NuevoButton
@@ -140,6 +143,10 @@
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.CreditosNumericUpDown.TabIndex = 24;
             // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
+            // 
             // rAsignaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +166,7 @@
             this.Text = "rAsignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +183,6 @@
         private System.Windows.Forms.Label AsignaturaIdLabel;
         private System.Windows.Forms.Button BuscarButton;
         private System.Windows.Forms.NumericUpDown CreditosNumericUpDown;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
