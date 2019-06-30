@@ -53,6 +53,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripcion.InscripcionId = Convert.ToInt32(InscripcionIdNumericUpDown.Value);
             Inscripcion.FechaInscripcion = FechaDeInscripcionDateTimePicker.Value;
             Inscripcion.EstudianteId = Convert.ToInt32(EstudianteIdNumericUpDown.Value);
+            Inscripcion.Nombre = NombreTextBox.Text;
             Inscripcion.PrecioCreditos = Convert.ToDecimal(PrecioCreditosNumericUpDown.Value);
             Inscripcion.Valor = Convert.ToDecimal(ValorTextBox.Text);
             Inscripcion.Detalle = this.Detalle;
@@ -66,6 +67,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
             InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
             EstudianteIdNumericUpDown.Value = Inscripcion.EstudianteId;
+            NombreTextBox.Text = Inscripcion.Nombre;
             NombreTextBox.Text = Convert.ToString(contexto.Estudiantes.Find(Inscripcion.EstudianteId).Nombre);
             PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
             ValorTextBox.Text = Convert.ToString(Inscripcion.Valor);
@@ -131,5 +133,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
             DescripcionTextBox.Text = Asignatura.Descripcion;
             CreditosNumericUpDown.Value = Asignatura.Creditos;
         }
+
     }
 }

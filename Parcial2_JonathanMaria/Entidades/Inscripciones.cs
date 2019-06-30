@@ -19,6 +19,7 @@ namespace Parcial2_JonathanMaria.Entidades
         public int EstudianteId { get; set; }
         [ForeignKey("EstudianteId")]
         public virtual Estudiantes Estudiante{ get; set; }
+        public String Nombre { get; set; }
 
         public Inscripciones()
         {
@@ -28,6 +29,7 @@ namespace Parcial2_JonathanMaria.Entidades
             Valor = 0;
             Detalle = new List<InscripcionDetalle>();
             EstudianteId = 0;
+            Nombre = string.Empty;
         }
     }
 }
