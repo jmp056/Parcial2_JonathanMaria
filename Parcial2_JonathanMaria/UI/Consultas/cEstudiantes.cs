@@ -12,23 +12,23 @@ using System.Windows.Forms;
 
 namespace Parcial2_JonathanMaria.UI.Consultas
 {
-    public partial class cAsignaturas : Form
+    public partial class cEstudiantes : Form
     {
-        public cAsignaturas()
+        public cEstudiantes()
         {
             InitializeComponent();
         }
 
         private void ConsultarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
-            var Listado = new List<Asignaturas>();
-            if(CriterioTextBox.Text.Trim().Length > 0)
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
+            var Listado = new List<Estudiantes>();
+            if (CriterioTextBox.Text.Trim().Length > 0)
             {
                 switch (FiltrarComboBox.SelectedIndex)
                 {
                     case 0:
-                        { 
+                        {
                             Listado = Repositorio.GetList(p => true);
                             break;
                         }
@@ -36,29 +36,26 @@ namespace Parcial2_JonathanMaria.UI.Consultas
                     case 1:
                         {
                             int id = Convert.ToInt32(CriterioTextBox.Text);
-                            Listado = Repositorio.GetList(p => p.AsignaturaId == id);
+                            Listado = Repositorio.GetList(p => p.EstudianteId == id);
                             break;
                         }
                     case 2:
                         {
-                            Listado = Repositorio.GetList(p => p.Descripcion.Contains(CriterioTextBox.Text));
+                            Listado = Repositorio.GetList(p => p.Nombre.Contains(CriterioTextBox.Text));
                             break;
-                        }
-                    case 3:
-                        {
-                            int Creditos = Convert.ToInt32(CriterioTextBox.Text);
-                            Listado = Repositorio.GetList(p => p.Creditos == Creditos);
-                            break;
-                        }
+                        }        
                 }
-               
+                if (FiltrarFechaCheckBox.Checked == true)
+                    Listado = Listado.Where(p => p.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && p.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
             else
             {
                 Listado = Repositorio.GetList(p => true);
             }
+
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
+
         }
     }
 }

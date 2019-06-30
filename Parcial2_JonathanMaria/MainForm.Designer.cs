@@ -35,6 +35,7 @@
             this.registroDeInscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAsignaturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarEstudiantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +84,8 @@
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarAsignaturasToolStripMenuItem});
+            this.consultarAsignaturasToolStripMenuItem,
+            this.consultarEstudiantesToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -94,6 +96,13 @@
             this.consultarAsignaturasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.consultarAsignaturasToolStripMenuItem.Text = "Consultar Asignaturas";
             this.consultarAsignaturasToolStripMenuItem.Click += new System.EventHandler(this.ConsultarAsignaturasToolStripMenuItem_Click);
+            // 
+            // consultarEstudiantesToolStripMenuItem
+            // 
+            this.consultarEstudiantesToolStripMenuItem.Name = "consultarEstudiantesToolStripMenuItem";
+            this.consultarEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.consultarEstudiantesToolStripMenuItem.Text = "Consultar Estudiantes";
+            this.consultarEstudiantesToolStripMenuItem.Click += new System.EventHandler(this.ConsultarEstudiantesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -120,6 +129,7 @@
         private System.Windows.Forms.ToolStripMenuItem registroDeInscripcionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarAsignaturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarEstudiantesToolStripMenuItem;
     }
 }
 

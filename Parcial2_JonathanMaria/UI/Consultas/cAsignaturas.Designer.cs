@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
-            this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CriterioTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.ConsultarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
@@ -56,35 +52,15 @@
             this.FiltrarComboBox.TabIndex = 0;
             this.FiltrarComboBox.Text = "Seleccione";
             // 
-            // HastaDateTimePicker
-            // 
-            this.HastaDateTimePicker.CustomFormat = "dd/MM/yy";
-            this.HastaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(512, 93);
-            this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(120, 22);
-            this.HastaDateTimePicker.TabIndex = 2;
-            // 
-            // DesdeDateTimePicker
-            // 
-            this.DesdeDateTimePicker.CustomFormat = "dd/MM/yy";
-            this.DesdeDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(512, 44);
-            this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(120, 22);
-            this.DesdeDateTimePicker.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(110, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 16);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Filtro";
+            this.label1.Text = "Criterio";
             // 
             // label2
             // 
@@ -92,9 +68,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(98, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 16);
+            this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Estudinte Id";
+            this.label2.Text = "Filtro";
             // 
             // CriterioTextBox
             // 
@@ -103,26 +79,6 @@
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(120, 22);
             this.CriterioTextBox.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(400, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Hasta";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(400, 49);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Desde";
             // 
             // ConsultaDataGridView
             // 
@@ -135,7 +91,7 @@
             // ConsultarButton
             // 
             this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultarButton.Location = new System.Drawing.Point(697, 47);
+            this.ConsultarButton.Location = new System.Drawing.Point(416, 67);
             this.ConsultarButton.Name = "ConsultarButton";
             this.ConsultarButton.Size = new System.Drawing.Size(75, 23);
             this.ConsultarButton.TabIndex = 10;
@@ -150,13 +106,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ConsultaDataGridView);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.CriterioTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DesdeDateTimePicker);
-            this.Controls.Add(this.HastaDateTimePicker);
             this.Controls.Add(this.FiltrarComboBox);
             this.Name = "cAsignaturas";
             this.Text = "cAsignaturas";
@@ -169,13 +121,9 @@
         #endregion
 
         private System.Windows.Forms.ComboBox FiltrarComboBox;
-        private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
-        private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CriterioTextBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.Button ConsultarButton;
     }

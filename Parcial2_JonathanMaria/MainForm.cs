@@ -42,5 +42,11 @@ namespace Parcial2_JonathanMaria
             cAsignaturas cA = new cAsignaturas();
             cA.ShowDialog();
         }
+
+        private void ConsultarEstudiantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEstudiantes cE = new cEstudiantes();
+            cE.ShowDialog();
+        }
     }
 }
