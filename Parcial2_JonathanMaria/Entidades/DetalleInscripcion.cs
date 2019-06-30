@@ -17,6 +17,15 @@ namespace Parcial2_JonathanMaria.Entidades
         public int Creditos { get; set; }
         public decimal Precio { get; set; }
 
+        public InscripcionDetalle()
+        {
+            IDID = 0;
+            InscripcionId = 0;
+            AsignaturaId = 0;
+            Descripcion = string.Empty;
+            Creditos = 0;
+            Precio = 0;
+        }
         public InscripcionDetalle(int iDID, int inscripcionId, int asignaturaId, string descripcion, int creditos, decimal precio)
         {
             IDID = iDID;

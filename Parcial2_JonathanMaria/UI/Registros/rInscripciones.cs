@@ -1,4 +1,5 @@
 ﻿using Parcial2_JonathanMaria.BLL;
+using Parcial2_JonathanMaria.DAL;
 using Parcial2_JonathanMaria.Entidades;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Parcial2_JonathanMaria.UI.Registros
         public rInscripciones()
         {
             InitializeComponent();
+            ValorTextBox.Text = "0";
             Detalle = new List<InscripcionDetalle>();
         }
 
@@ -59,9 +61,13 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void LlenaCampos(Inscripciones Inscripcion)
         {
+            Contexto contexto = new Contexto();
+            RepositorioBase<Estudiantes> repositorio = new RepositorioBase<Estudiantes>();
             InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
             EstudianteIdNumericUpDown.Value = Inscripcion.EstudianteId;
+            //int id = Inscripcion.EstudianteId;
+            NombreTextBox.Text = Convert.ToString(contexto.Estudiantes.Find(Inscripcion.EstudianteId).Nombre);
             PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
             ValorTextBox.Text = Convert.ToString(Inscripcion.Valor);
             Detalle = new List<InscripcionDetalle>();
@@ -84,6 +90,8 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 precio: Convert.ToDecimal(PrecioTextBox.Text)
             )
             );
+            decimal val = Convert.ToDecimal(ValorTextBox.Text) + Convert.ToDecimal(PrecioTextBox.Text);
+            ValorTextBox.Text = Convert.ToString(val);
             CargaGrid();
         }
 
@@ -93,6 +101,26 @@ namespace Parcial2_JonathanMaria.UI.Registros
             Inscripcion = LlenaClase();
             InscripcionesBLL.Guardar(Inscripcion);
             Limpiar();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            //RepositorioBase < Inscripciones > = new RepositorioBase<Inscripciones>;
+            int id;
+            Inscripciones Inscripcion = new Inscripciones();
+            int.TryParse(InscripcionIdNumericUpDown.Text, out id);
+            Inscripcion = InscripcionesBLL.Buscar(id);
+            LlenaCampos(Inscripcion);
+        }
+
+        private void PrecioCreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
+        }
+
+        private void CreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
         }
     }
 }

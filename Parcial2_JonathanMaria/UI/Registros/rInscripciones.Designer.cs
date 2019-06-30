@@ -140,6 +140,7 @@
             this.BuscarButton.TabIndex = 12;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // DetalleDataGridView
             // 
@@ -213,6 +214,7 @@
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(58, 22);
             this.CreditosNumericUpDown.TabIndex = 36;
+            this.CreditosNumericUpDown.ValueChanged += new System.EventHandler(this.CreditosNumericUpDown_ValueChanged);
             // 
             // EstudianteId
             // 
@@ -267,6 +269,7 @@
             this.PrecioCreditosNumericUpDown.Name = "PrecioCreditosNumericUpDown";
             this.PrecioCreditosNumericUpDown.Size = new System.Drawing.Size(57, 22);
             this.PrecioCreditosNumericUpDown.TabIndex = 43;
+            this.PrecioCreditosNumericUpDown.ValueChanged += new System.EventHandler(this.PrecioCreditosNumericUpDown_ValueChanged);
             // 
             // AsignaturaIdNumericUpDown
             // 

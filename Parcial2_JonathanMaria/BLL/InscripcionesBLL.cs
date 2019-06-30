@@ -29,5 +29,26 @@ namespace Parcial2_JonathanMaria.BLL
             }
             return paso;
         }
+
+
+        public static Inscripciones Buscar(int id)
+        {
+            Contexto db = new Contexto();
+            Inscripciones Inscripcion = new Inscripciones();
+            try
+            {
+                Inscripcion = db.Inscripciones.Find(id);
+                Inscripcion.Detalle.Count();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.Dispose();
+            }
+            return Inscripcion;
+        }
     }
 }
