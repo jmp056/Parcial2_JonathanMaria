@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,9 @@
             this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BalanceTextBox = new System.Windows.Forms.TextBox();
+            this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscarButton
@@ -155,11 +158,17 @@
             // 
             // BalanceTextBox
             // 
+            this.BalanceTextBox.Enabled = false;
             this.BalanceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BalanceTextBox.Location = new System.Drawing.Point(152, 164);
             this.BalanceTextBox.Name = "BalanceTextBox";
             this.BalanceTextBox.Size = new System.Drawing.Size(120, 22);
             this.BalanceTextBox.TabIndex = 12;
+            this.BalanceTextBox.Text = "0";
+            // 
+            // MyErrorProvider
+            // 
+            this.MyErrorProvider.ContainerControl = this;
             // 
             // rEstudiantes
             // 
@@ -181,6 +190,7 @@
             this.Name = "rEstudiantes";
             this.Text = "rEstudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +210,6 @@
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.TextBox BalanceTextBox;
+        private System.Windows.Forms.ErrorProvider MyErrorProvider;
     }
 }
