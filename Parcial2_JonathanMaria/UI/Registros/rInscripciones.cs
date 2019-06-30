@@ -66,7 +66,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
             InscripcionIdNumericUpDown.Value = Inscripcion.InscripcionId;
             FechaDeInscripcionDateTimePicker.Value = Inscripcion.FechaInscripcion;
             EstudianteIdNumericUpDown.Value = Inscripcion.EstudianteId;
-            //int id = Inscripcion.EstudianteId;
             NombreTextBox.Text = Convert.ToString(contexto.Estudiantes.Find(Inscripcion.EstudianteId).Nombre);
             PrecioCreditosNumericUpDown.Value = Inscripcion.PrecioCreditos;
             ValorTextBox.Text = Convert.ToString(Inscripcion.Valor);
@@ -77,7 +76,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-            //List<InscripcionDetalle> Detalle = new List<InscripcionDetalle>();
             if (DetalleDataGridView.DataSource != null)
                 Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
             this.Detalle.Add(

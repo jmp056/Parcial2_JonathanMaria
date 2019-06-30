@@ -1,4 +1,5 @@
-﻿using Parcial2_JonathanMaria.UI.Registros;
+﻿using Parcial2_JonathanMaria.UI.Consultas;
+using Parcial2_JonathanMaria.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,12 @@ namespace Parcial2_JonathanMaria
         {
             rInscripciones rI = new rInscripciones();
             rI.ShowDialog();
+        }
+
+        private void ConsultarAsignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cAsignaturas cA = new cAsignaturas();
+            cA.ShowDialog();
         }
     }
 }

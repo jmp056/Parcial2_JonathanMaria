@@ -33,13 +33,16 @@
             this.registrarEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarAsignatuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeInscripcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarAsignaturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrosToolStripMenuItem});
+            this.registrosToolStripMenuItem,
+            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -77,6 +80,21 @@
             this.registroDeInscripcionesToolStripMenuItem.Text = "Registro de Inscripciones";
             this.registroDeInscripcionesToolStripMenuItem.Click += new System.EventHandler(this.RegistroDeInscripcionesToolStripMenuItem_Click);
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarAsignaturasToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // consultarAsignaturasToolStripMenuItem
+            // 
+            this.consultarAsignaturasToolStripMenuItem.Name = "consultarAsignaturasToolStripMenuItem";
+            this.consultarAsignaturasToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.consultarAsignaturasToolStripMenuItem.Text = "Consultar Asignaturas";
+            this.consultarAsignaturasToolStripMenuItem.Click += new System.EventHandler(this.ConsultarAsignaturasToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +118,8 @@
         private System.Windows.Forms.ToolStripMenuItem registrarEstudianteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarAsignatuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeInscripcionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarAsignaturasToolStripMenuItem;
     }
 }
 
