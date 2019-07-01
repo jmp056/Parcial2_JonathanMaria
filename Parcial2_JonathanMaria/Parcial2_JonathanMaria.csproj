@@ -117,6 +117,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Consultas\cAsignaturas.resx">
       <DependentUpon>cAsignaturas.cs</DependentUpon>
@@ -150,6 +151,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\BotonSubir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonConsultaEstudiante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonRegistro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonConsultarAsignatura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonAñadir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonRemover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonNuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonBuscar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
