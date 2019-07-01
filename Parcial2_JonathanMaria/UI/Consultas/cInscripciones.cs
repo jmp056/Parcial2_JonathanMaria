@@ -51,14 +51,14 @@ namespace Parcial2_JonathanMaria.UI.Consultas
                             break;
                         }
                 }
-                if (FiltrarFechaCheckBox.Checked == true)
-                    Listado = Listado.Where(p => p.FechaInscripcion.Date >= DesdeDateTimePicker.Value.Date && p.FechaInscripcion.Date <= HastaDateTimePicker.Value.Date).ToList();
+
             }
             else
             {
                 Listado = Repositorio.GetList(p => true);
             }
-
+            if (FiltrarFechaCheckBox.Checked == true)
+                Listado = Listado.Where(p => p.FechaInscripcion.Date >= DesdeDateTimePicker.Value.Date && p.FechaInscripcion.Date <= HastaDateTimePicker.Value.Date).ToList();
             ConsultaDataGridView.DataSource = null;
             ConsultaDataGridView.DataSource = Listado;
         }

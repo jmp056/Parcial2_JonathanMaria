@@ -15,39 +15,29 @@ namespace Parcial2_JonathanMaria.Entidades.Tests
         [TestMethod()]
         public void Guardar()
         {
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.InscripcionId = 1;
             inscripcion.FechaInscripcion = DateTime.Now;
-            inscripcion.Detalle.Add(new InscripcionDetalle()
-            {
-                AsignaturaId = 1,
-                Descripcion = "Programacion Aplicada 1",
-                Creditos = 1,
-                Precio = 560
-            }
-            );
+            inscripcion.PrecioCreditos = 2;
+            inscripcion.Valor = 1000;
             inscripcion.EstudianteId = 1;
-            inscripcion.Balance = 560;
-            Assert.IsTrue(InscripcionesBLL.Guardar(inscripcion));
+            inscripcion.Nombre = "Jona";
+            Assert.IsTrue(repositorio.Guardar(inscripcion));
         }
 
         [TestMethod()]
         public void Modificar()
         {
+            RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones inscripcion = new Inscripciones();
             inscripcion.InscripcionId = 1;
             inscripcion.FechaInscripcion = DateTime.Now;
-            inscripcion.Detalle.Add(new InscripcionDetalle()
-            {
-                AsignaturaId = 1,
-                Descripcion = "Programacion Aplicada 1",
-                Creditos = 1,
-                Precio = 560
-            }
-            );
+            inscripcion.PrecioCreditos = 2;
+            inscripcion.Valor = 1000;
             inscripcion.EstudianteId = 1;
-            inscripcion.Balance = 560;
-            Assert.IsTrue(InscripcionesBLL.Modificar(inscripcion));
+            inscripcion.Nombre = "Jonathan";
+            Assert.IsTrue(repositorio.Modificar(inscripcion));
         }
 
         [TestMethod()]

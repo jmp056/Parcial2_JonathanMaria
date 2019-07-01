@@ -117,6 +117,7 @@
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
             this.ConsultaDataGridView.Size = new System.Drawing.Size(550, 150);
             this.ConsultaDataGridView.TabIndex = 30;
+            this.ConsultaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConsultaDataGridView_CellContentClick);
             // 
             // CriterioTextBox
             // 
