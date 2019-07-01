@@ -83,9 +83,9 @@ namespace Parcial2_JonathanMaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BotonConsultaEstudiante {
+        internal static System.Drawing.Bitmap BotonConsultarAsignaturas {
             get {
-                object obj = ResourceManager.GetObject("BotonConsultaEstudiante", resourceCulture);
+                object obj = ResourceManager.GetObject("BotonConsultarAsignaturas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,39 @@ namespace Parcial2_JonathanMaria.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BotonConsultarAsignatura {
+        internal static System.Drawing.Bitmap BotonConsultarEstudiantes {
             get {
-                object obj = ResourceManager.GetObject("BotonConsultarAsignatura", resourceCulture);
+                object obj = ResourceManager.GetObject("BotonConsultarEstudiantes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonConsultarInscripciones {
+            get {
+                object obj = ResourceManager.GetObject("BotonConsultarInscripciones", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonEliminar {
+            get {
+                object obj = ResourceManager.GetObject("BotonEliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BotonGuardar {
+            get {
+                object obj = ResourceManager.GetObject("BotonGuardar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,16 +166,6 @@ namespace Parcial2_JonathanMaria.Properties {
         internal static System.Drawing.Bitmap BotonSubir {
             get {
                 object obj = ResourceManager.GetObject("BotonSubir", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InscripcionImagen {
-            get {
-                object obj = ResourceManager.GetObject("InscripcionImagen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,54 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NuevoButton = new System.Windows.Forms.Button();
-            this.GuardarButton = new System.Windows.Forms.Button();
-            this.EliminarButton = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rAsignaturas));
             this.NombreLabel = new System.Windows.Forms.Label();
             this.CreditosLabel = new System.Windows.Forms.Label();
             this.AsignaturaIdNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.DescripcionTextBox = new System.Windows.Forms.TextBox();
             this.AsignaturaIdLabel = new System.Windows.Forms.Label();
-            this.BuscarButton = new System.Windows.Forms.Button();
             this.CreditosNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
             this.SuspendLayout();
-            // 
-            // NuevoButton
-            // 
-            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NuevoButton.Location = new System.Drawing.Point(18, 148);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(100, 30);
-            this.NuevoButton.TabIndex = 23;
-            this.NuevoButton.Text = "Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
-            // 
-            // GuardarButton
-            // 
-            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Location = new System.Drawing.Point(148, 148);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(100, 30);
-            this.GuardarButton.TabIndex = 22;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.UseVisualStyleBackColor = true;
-            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
-            // 
-            // EliminarButton
-            // 
-            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Location = new System.Drawing.Point(271, 148);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(100, 30);
-            this.EliminarButton.TabIndex = 21;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.UseVisualStyleBackColor = true;
-            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // NombreLabel
             // 
@@ -101,7 +69,7 @@
             // AsignaturaIdNumericUpDown
             // 
             this.AsignaturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(128, 22);
+            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(125, 22);
             this.AsignaturaIdNumericUpDown.Name = "AsignaturaIdNumericUpDown";
             this.AsignaturaIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AsignaturaIdNumericUpDown.TabIndex = 17;
@@ -109,9 +77,9 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionTextBox.Location = new System.Drawing.Point(128, 57);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(125, 58);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(243, 22);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(230, 22);
             this.DescripcionTextBox.TabIndex = 16;
             // 
             // AsignaturaIdLabel
@@ -124,21 +92,10 @@
             this.AsignaturaIdLabel.TabIndex = 15;
             this.AsignaturaIdLabel.Text = "Asignatura Id";
             // 
-            // BuscarButton
-            // 
-            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Location = new System.Drawing.Point(281, 18);
-            this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(90, 30);
-            this.BuscarButton.TabIndex = 13;
-            this.BuscarButton.Text = "Buscar";
-            this.BuscarButton.UseVisualStyleBackColor = true;
-            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
-            // 
             // CreditosNumericUpDown
             // 
             this.CreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreditosNumericUpDown.Location = new System.Drawing.Point(128, 93);
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(125, 92);
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.CreditosNumericUpDown.TabIndex = 24;
@@ -147,11 +104,66 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonNuevo;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(15, 130);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(90, 30);
+            this.NuevoButton.TabIndex = 23;
+            this.NuevoButton.Text = "     Nuevo";
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonGuardar;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(140, 130);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(90, 30);
+            this.GuardarButton.TabIndex = 22;
+            this.GuardarButton.Text = "Guardar\r\n";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonEliminar;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(265, 130);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(90, 30);
+            this.EliminarButton.TabIndex = 21;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // BuscarButton
+            // 
+            this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonBuscar;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(265, 14);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(90, 30);
+            this.BuscarButton.TabIndex = 13;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
+            // 
             // rAsignaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 201);
+            this.ClientSize = new System.Drawing.Size(372, 178);
             this.Controls.Add(this.CreditosNumericUpDown);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
@@ -162,6 +174,7 @@
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.AsignaturaIdLabel);
             this.Controls.Add(this.BuscarButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rAsignaturas";
             this.Text = "Registro de Asignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();

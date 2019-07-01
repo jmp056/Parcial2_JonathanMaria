@@ -124,27 +124,6 @@
     <value>25</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="GuardarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAGXRF
-        WHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAPJJREFUOE/V1L9qwlAUgPEUHHRw6ShOgi5d
-        BAfBrUtfwEkRdHQpPoGCgg/QQqFTh76BLuogglMRxSFDt4qLIIgguinodySBGPPnYicP/MiS+xEuh2iM
-        jqPhDx20XLQxwhIVhHEea+Qdj7BPHC9IIgt5d4FXnEMqkRrW+IIZMUNlKEXq2OEb1oj4wb8jcv4i8oEI
-        gjYxZPCEHDwjc/TRddHDFJ6RW1xEtvjFRMEMB1xF5DMLSCuoQi76KjKELFMRn3iDLJjT5LGBa0S289mQ
-        QhQhPMAc34jsQQNN41lCAgGY4xtRmTuIrDCA03/Ebow9OKfpJ7nAohVSdKNBAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="EliminarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7pAAAO6QEOM0IcAAAAGXRF
-        WHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAALNJREFUOE/tlL0JAkEQhbcDEbQCQ0uxj7ML
-        LUQrEIzM5SowE7QKAxHERN8Hc8nt7LprZHAPPtj5eQ8m2ZDRQbwTMKvWUTzFrgc9Zl81EY1YGhfxEKse
-        9Jh1e3jwRloI77wS8Eaaic2P4HU1FudK8CQ1Fd5JOfAk1QXexFacrN4bvOkxY6c4kFPQWlDPDd70EDtD
-        YKwh8I8D74JP9Gp1a/Cmx4yd4sAasoEj8RKe0YNdPKYQPhUBsFvTqeByAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIACPGAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgEAAAA9ntg7QAAGFZJ

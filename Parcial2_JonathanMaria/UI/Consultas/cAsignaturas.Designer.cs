@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cAsignaturas));
             this.FiltrarComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,11 +92,13 @@
             // ConsultarButton
             // 
             this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarAsignaturas;
+            this.ConsultarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarButton.Location = new System.Drawing.Point(244, 36);
             this.ConsultarButton.Name = "ConsultarButton";
             this.ConsultarButton.Size = new System.Drawing.Size(110, 30);
             this.ConsultarButton.TabIndex = 10;
-            this.ConsultarButton.Text = "Consultar";
+            this.ConsultarButton.Text = "     Consultar";
             this.ConsultarButton.UseVisualStyleBackColor = true;
             this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
             // 
@@ -110,6 +113,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FiltrarComboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cAsignaturas";
             this.Text = "Consulta de Asignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();

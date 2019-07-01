@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rEstudiantes));
             this.BuscarButton = new System.Windows.Forms.Button();
             this.FechaIngresoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,20 +43,21 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.BalanceTextBox = new System.Windows.Forms.TextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.EstudiantePictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EstudiantePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonBuscar;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(303, 14);
             this.BuscarButton.Name = "BuscarButton";
             this.BuscarButton.Size = new System.Drawing.Size(90, 30);
             this.BuscarButton.TabIndex = 0;
             this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarButton.UseVisualStyleBackColor = true;
             this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
@@ -128,33 +130,40 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonEliminar;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(293, 176);
             this.EliminarButton.Name = "EliminarButton";
             this.EliminarButton.Size = new System.Drawing.Size(100, 30);
             this.EliminarButton.TabIndex = 9;
             this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.EliminarButton.UseVisualStyleBackColor = true;
             this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
             // 
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonGuardar;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(160, 176);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(100, 30);
             this.GuardarButton.TabIndex = 10;
-            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.Text = "     Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonNuevo;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.NuevoButton.Location = new System.Drawing.Point(18, 176);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(100, 30);
             this.NuevoButton.TabIndex = 11;
-            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.Text = "      Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
             this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
@@ -172,20 +181,11 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // EstudiantePictureBox
-            // 
-            this.EstudiantePictureBox.Location = new System.Drawing.Point(303, 92);
-            this.EstudiantePictureBox.Name = "EstudiantePictureBox";
-            this.EstudiantePictureBox.Size = new System.Drawing.Size(90, 57);
-            this.EstudiantePictureBox.TabIndex = 13;
-            this.EstudiantePictureBox.TabStop = false;
-            // 
             // rEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 228);
-            this.Controls.Add(this.EstudiantePictureBox);
             this.Controls.Add(this.BalanceTextBox);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
@@ -198,11 +198,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FechaIngresoDateTimePicker);
             this.Controls.Add(this.BuscarButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "rEstudiantes";
             this.Text = "Registro de Estudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EstudiantePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,6 +223,5 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.TextBox BalanceTextBox;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
-        private System.Windows.Forms.PictureBox EstudiantePictureBox;
     }
 }

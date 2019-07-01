@@ -83,7 +83,10 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 EliminarButton.Enabled = true;
             }
             else
+            {
                 MessageBox.Show("Asignatura no encontrada!");
+                EliminarButton.Enabled = false;
+            }
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -155,5 +158,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 return;
             }
         }
+
     }
 }

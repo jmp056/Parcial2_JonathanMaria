@@ -52,17 +52,17 @@
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.EstudianteGroupBox = new System.Windows.Forms.GroupBox();
-            this.RegistroEstudiantesButton = new System.Windows.Forms.Button();
-            this.ConsultaEstudiantesButton = new System.Windows.Forms.Button();
-            this.CargarEstudianteButton = new System.Windows.Forms.Button();
             this.AsignaturasGroupBox = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.NuevoButton = new System.Windows.Forms.Button();
             this.RegistroAsignaturasButton = new System.Windows.Forms.Button();
             this.ConsultarAsignaturasButton = new System.Windows.Forms.Button();
             this.RemoverAsignaturaButton = new System.Windows.Forms.Button();
             this.CargarAsignaturaButton = new System.Windows.Forms.Button();
             this.AgregarButton = new System.Windows.Forms.Button();
-            this.NuevoButton = new System.Windows.Forms.Button();
+            this.RegistroEstudiantesButton = new System.Windows.Forms.Button();
+            this.ConsultaEstudiantesButton = new System.Windows.Forms.Button();
+            this.CargarEstudianteButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
@@ -283,44 +283,6 @@
             this.EstudianteGroupBox.TabIndex = 56;
             this.EstudianteGroupBox.TabStop = false;
             // 
-            // RegistroEstudiantesButton
-            // 
-            this.RegistroEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistroEstudiantesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegistroEstudiantesButton.Location = new System.Drawing.Point(330, 58);
-            this.RegistroEstudiantesButton.Name = "RegistroEstudiantesButton";
-            this.RegistroEstudiantesButton.Size = new System.Drawing.Size(205, 30);
-            this.RegistroEstudiantesButton.TabIndex = 52;
-            this.RegistroEstudiantesButton.Text = "Registro de Estudiantes";
-            this.RegistroEstudiantesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegistroEstudiantesButton.UseVisualStyleBackColor = true;
-            this.RegistroEstudiantesButton.Click += new System.EventHandler(this.RegistroEstudiantesButton_Click);
-            // 
-            // ConsultaEstudiantesButton
-            // 
-            this.ConsultaEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultaEstudiantesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultaEstudiantesButton.Location = new System.Drawing.Point(330, 20);
-            this.ConsultaEstudiantesButton.Name = "ConsultaEstudiantesButton";
-            this.ConsultaEstudiantesButton.Size = new System.Drawing.Size(205, 30);
-            this.ConsultaEstudiantesButton.TabIndex = 51;
-            this.ConsultaEstudiantesButton.Text = "    Consultar Estudiantes";
-            this.ConsultaEstudiantesButton.UseVisualStyleBackColor = true;
-            this.ConsultaEstudiantesButton.Click += new System.EventHandler(this.ConsultaEstudiantesButton_Click);
-            // 
-            // CargarEstudianteButton
-            // 
-            this.CargarEstudianteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CargarEstudianteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CargarEstudianteButton.Location = new System.Drawing.Point(210, 20);
-            this.CargarEstudianteButton.Name = "CargarEstudianteButton";
-            this.CargarEstudianteButton.Size = new System.Drawing.Size(90, 30);
-            this.CargarEstudianteButton.TabIndex = 53;
-            this.CargarEstudianteButton.Text = "Cargar";
-            this.CargarEstudianteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CargarEstudianteButton.UseVisualStyleBackColor = true;
-            this.CargarEstudianteButton.Click += new System.EventHandler(this.CargarEstudianteButton_Click);
-            // 
             // AsignaturasGroupBox
             // 
             this.AsignaturasGroupBox.Controls.Add(this.label2);
@@ -355,9 +317,23 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Valor (RD$)";
             // 
+            // NuevoButton
+            // 
+            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonNuevo;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(50, 550);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(100, 30);
+            this.NuevoButton.TabIndex = 15;
+            this.NuevoButton.Text = "      Nuevo";
+            this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            // 
             // RegistroAsignaturasButton
             // 
             this.RegistroAsignaturasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroAsignaturasButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRegistro;
             this.RegistroAsignaturasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegistroAsignaturasButton.Location = new System.Drawing.Point(295, 25);
             this.RegistroAsignaturasButton.Name = "RegistroAsignaturasButton";
@@ -371,6 +347,7 @@
             // ConsultarAsignaturasButton
             // 
             this.ConsultarAsignaturasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarAsignaturasButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarAsignaturas;
             this.ConsultarAsignaturasButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ConsultarAsignaturasButton.Location = new System.Drawing.Point(25, 25);
             this.ConsultarAsignaturasButton.Name = "ConsultarAsignaturasButton";
@@ -383,6 +360,7 @@
             // RemoverAsignaturaButton
             // 
             this.RemoverAsignaturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemoverAsignaturaButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRemover;
             this.RemoverAsignaturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RemoverAsignaturaButton.Location = new System.Drawing.Point(15, 255);
             this.RemoverAsignaturaButton.Name = "RemoverAsignaturaButton";
@@ -396,6 +374,7 @@
             // CargarAsignaturaButton
             // 
             this.CargarAsignaturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CargarAsignaturaButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonSubir;
             this.CargarAsignaturaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CargarAsignaturaButton.Location = new System.Drawing.Point(210, 73);
             this.CargarAsignaturaButton.Name = "CargarAsignaturaButton";
@@ -409,6 +388,7 @@
             // AgregarButton
             // 
             this.AgregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonAñadir;
             this.AgregarButton.Location = new System.Drawing.Point(490, 85);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(45, 40);
@@ -416,22 +396,51 @@
             this.AgregarButton.UseVisualStyleBackColor = true;
             this.AgregarButton.Click += new System.EventHandler(this.AgregarButton_Click);
             // 
-            // NuevoButton
+            // RegistroEstudiantesButton
             // 
-            this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(50, 550);
-            this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(100, 30);
-            this.NuevoButton.TabIndex = 15;
-            this.NuevoButton.Text = "      Nuevo";
-            this.NuevoButton.UseVisualStyleBackColor = true;
-            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
+            this.RegistroEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroEstudiantesButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRegistro;
+            this.RegistroEstudiantesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegistroEstudiantesButton.Location = new System.Drawing.Point(330, 58);
+            this.RegistroEstudiantesButton.Name = "RegistroEstudiantesButton";
+            this.RegistroEstudiantesButton.Size = new System.Drawing.Size(205, 30);
+            this.RegistroEstudiantesButton.TabIndex = 52;
+            this.RegistroEstudiantesButton.Text = "Registro de Estudiantes";
+            this.RegistroEstudiantesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegistroEstudiantesButton.UseVisualStyleBackColor = true;
+            this.RegistroEstudiantesButton.Click += new System.EventHandler(this.RegistroEstudiantesButton_Click);
+            // 
+            // ConsultaEstudiantesButton
+            // 
+            this.ConsultaEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaEstudiantesButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarEstudiantes;
+            this.ConsultaEstudiantesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultaEstudiantesButton.Location = new System.Drawing.Point(330, 20);
+            this.ConsultaEstudiantesButton.Name = "ConsultaEstudiantesButton";
+            this.ConsultaEstudiantesButton.Size = new System.Drawing.Size(205, 30);
+            this.ConsultaEstudiantesButton.TabIndex = 51;
+            this.ConsultaEstudiantesButton.Text = "    Consultar Estudiantes";
+            this.ConsultaEstudiantesButton.UseVisualStyleBackColor = true;
+            this.ConsultaEstudiantesButton.Click += new System.EventHandler(this.ConsultaEstudiantesButton_Click);
+            // 
+            // CargarEstudianteButton
+            // 
+            this.CargarEstudianteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CargarEstudianteButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonSubir;
+            this.CargarEstudianteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CargarEstudianteButton.Location = new System.Drawing.Point(210, 20);
+            this.CargarEstudianteButton.Name = "CargarEstudianteButton";
+            this.CargarEstudianteButton.Size = new System.Drawing.Size(90, 30);
+            this.CargarEstudianteButton.TabIndex = 53;
+            this.CargarEstudianteButton.Text = "Cargar";
+            this.CargarEstudianteButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CargarEstudianteButton.UseVisualStyleBackColor = true;
+            this.CargarEstudianteButton.Click += new System.EventHandler(this.CargarEstudianteButton_Click);
             // 
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonGuardar;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.GuardarButton.Location = new System.Drawing.Point(240, 550);
             this.GuardarButton.Name = "GuardarButton";
@@ -444,7 +453,7 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Image = ((System.Drawing.Image)(resources.GetObject("EliminarButton.Image")));
+            this.EliminarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonEliminar;
             this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.EliminarButton.Location = new System.Drawing.Point(435, 550);
             this.EliminarButton.Name = "EliminarButton";
@@ -457,6 +466,7 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonBuscar;
             this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarButton.Location = new System.Drawing.Point(326, 41);
             this.BuscarButton.Name = "BuscarButton";

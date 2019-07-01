@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +64,7 @@
             // 
             // registrarEstudianteToolStripMenuItem
             // 
+            this.registrarEstudianteToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRegistro;
             this.registrarEstudianteToolStripMenuItem.Name = "registrarEstudianteToolStripMenuItem";
             this.registrarEstudianteToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.registrarEstudianteToolStripMenuItem.Text = "Registro de Estudiantes";
@@ -70,6 +72,7 @@
             // 
             // registrarAsignatuToolStripMenuItem
             // 
+            this.registrarAsignatuToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRegistro;
             this.registrarAsignatuToolStripMenuItem.Name = "registrarAsignatuToolStripMenuItem";
             this.registrarAsignatuToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.registrarAsignatuToolStripMenuItem.Text = "Registro de Asignaturas";
@@ -77,6 +80,7 @@
             // 
             // registroDeInscripcionesToolStripMenuItem
             // 
+            this.registroDeInscripcionesToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonRegistro;
             this.registroDeInscripcionesToolStripMenuItem.Name = "registroDeInscripcionesToolStripMenuItem";
             this.registroDeInscripcionesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.registroDeInscripcionesToolStripMenuItem.Text = "Registro de Inscripciones";
@@ -94,6 +98,7 @@
             // 
             // consultarAsignaturasToolStripMenuItem
             // 
+            this.consultarAsignaturasToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarAsignaturas;
             this.consultarAsignaturasToolStripMenuItem.Name = "consultarAsignaturasToolStripMenuItem";
             this.consultarAsignaturasToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.consultarAsignaturasToolStripMenuItem.Text = "Consultar Asignaturas";
@@ -101,6 +106,7 @@
             // 
             // consultarEstudiantesToolStripMenuItem
             // 
+            this.consultarEstudiantesToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarEstudiantes;
             this.consultarEstudiantesToolStripMenuItem.Name = "consultarEstudiantesToolStripMenuItem";
             this.consultarEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.consultarEstudiantesToolStripMenuItem.Text = "Consultar Estudiantes";
@@ -108,6 +114,7 @@
             // 
             // consultarInscripcionesToolStripMenuItem
             // 
+            this.consultarInscripcionesToolStripMenuItem.Image = global::Parcial2_JonathanMaria.Properties.Resources.BotonConsultarInscripciones;
             this.consultarInscripcionesToolStripMenuItem.Name = "consultarInscripcionesToolStripMenuItem";
             this.consultarInscripcionesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.consultarInscripcionesToolStripMenuItem.Text = "Consultar Inscripciones";
@@ -119,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 344);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Menu principal";
