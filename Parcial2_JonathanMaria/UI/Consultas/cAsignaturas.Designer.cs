@@ -46,7 +46,7 @@
             "Id",
             "Descripcion",
             "Creditos"});
-            this.FiltrarComboBox.Location = new System.Drawing.Point(242, 46);
+            this.FiltrarComboBox.Location = new System.Drawing.Point(95, 22);
             this.FiltrarComboBox.Name = "FiltrarComboBox";
             this.FiltrarComboBox.Size = new System.Drawing.Size(119, 24);
             this.FiltrarComboBox.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 93);
+            this.label1.Location = new System.Drawing.Point(15, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(98, 54);
+            this.label2.Location = new System.Drawing.Point(15, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 5;
@@ -75,7 +75,7 @@
             // CriterioTextBox
             // 
             this.CriterioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CriterioTextBox.Location = new System.Drawing.Point(242, 87);
+            this.CriterioTextBox.Location = new System.Drawing.Point(95, 58);
             this.CriterioTextBox.Name = "CriterioTextBox";
             this.CriterioTextBox.Size = new System.Drawing.Size(120, 22);
             this.CriterioTextBox.TabIndex = 6;
@@ -83,17 +83,17 @@
             // ConsultaDataGridView
             // 
             this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ConsultaDataGridView.Location = new System.Drawing.Point(54, 151);
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(15, 95);
             this.ConsultaDataGridView.Name = "ConsultaDataGridView";
-            this.ConsultaDataGridView.Size = new System.Drawing.Size(734, 150);
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(340, 150);
             this.ConsultaDataGridView.TabIndex = 9;
             // 
             // ConsultarButton
             // 
             this.ConsultarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultarButton.Location = new System.Drawing.Point(416, 67);
+            this.ConsultarButton.Location = new System.Drawing.Point(244, 36);
             this.ConsultarButton.Name = "ConsultarButton";
-            this.ConsultarButton.Size = new System.Drawing.Size(75, 23);
+            this.ConsultarButton.Size = new System.Drawing.Size(110, 30);
             this.ConsultarButton.TabIndex = 10;
             this.ConsultarButton.Text = "Consultar";
             this.ConsultarButton.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(369, 267);
             this.Controls.Add(this.ConsultarButton);
             this.Controls.Add(this.ConsultaDataGridView);
             this.Controls.Add(this.CriterioTextBox);
@@ -111,7 +111,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FiltrarComboBox);
             this.Name = "cAsignaturas";
-            this.Text = "cAsignaturas";
+            this.Text = "Consulta de Asignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
