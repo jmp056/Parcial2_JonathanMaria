@@ -107,7 +107,8 @@ namespace Parcial2_JonathanMaria.BLL
             try
             {
                 Inscripcion = db.Inscripciones.Find(id);
-                Inscripcion.Detalle.Count();
+                if (Inscripcion != null)
+                    Inscripcion.Detalle.Count();
             }
             catch (Exception)
             {
