@@ -124,8 +124,11 @@
   <data name="BotonConsultaEstudiante" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonConsultaEstudiante.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonRegistro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonRegistro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BotonBuscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonBuscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotonSubir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonSubir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,13 +136,13 @@
   <data name="BotonRemover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonRemover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonRegistro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonRegistro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BotonNuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BotonNuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BotonAñadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BotonAñadir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BotonBuscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BotonBuscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="InscripcionImagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InscripcionImagen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

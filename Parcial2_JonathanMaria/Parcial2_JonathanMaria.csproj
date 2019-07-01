@@ -152,28 +152,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BotonSubir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonConsultaEstudiante.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonRegistro.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonConsultarAsignatura.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonAñadir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonRemover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonNuevo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonBuscar.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
