@@ -21,7 +21,7 @@ namespace Parcial2_JonathanMaria.BLL
                 {
                     paso = db.SaveChanges() > 0;
                     if(paso == true)
-                        db.Estudiantes.Find(Inscripcion.EstudianteId).Balance = Inscripcion.Valor;
+                        db.Estudiantes.Find(Inscripcion.EstudianteId).Balance += Inscripcion.Valor;
                 }
                    
             }

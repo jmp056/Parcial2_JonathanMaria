@@ -94,6 +94,8 @@ namespace Parcial2_JonathanMaria.UI.Registros
         private bool Validar()
         {
             MyErrorProvider.Clear();
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
+            Estudiantes Estudiante = Repositorio.Buscar(Convert.ToInt32(EstudianteIdNumericUpDown.Value));
             bool paso = true;
             if(FechaDeInscripcionDateTimePicker.Value > DateTime.Now)
             {
@@ -101,12 +103,20 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 FechaDeInscripcionDateTimePicker.Focus();
                 paso = false;
             }
-            if(NombreTextBox.Text == string.Empty)
+
+            if (Estudiante.Nombre != NombreTextBox.Text || NombreTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(CargarEstudianteButton, "Debe cargar un estudiante");
+                CargarEstudianteButton.Focus();
+                paso = false;
+            }
+
+            /*if (NombreTextBox.Text == string.Empty)
             {
                 MyErrorProvider.SetError(NombreTextBox, "Debe seleccionar un estudiante");
                 FechaDeInscripcionDateTimePicker.Focus();
                 paso = false;
-            }
+            }*/
             if(PrecioCreditosNumericUpDown.Value < 1 || PrecioCreditosNumericUpDown.Value > 5000)
             {
                 MyErrorProvider.SetError(PrecioCreditosNumericUpDown, "El precio de los creditos debe estar entre 1 y 5,000");
@@ -200,12 +210,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
             if (!Validar())
                 return;
             Inscripcion = LlenaClase();
-            if (ValidarEstudiante(Convert.ToInt32(EstudianteIdNumericUpDown.Value)) == false)
-            {
-                MyErrorProvider.SetError(CargarAsignaturaButton, "Debe cargar la asignatura");
-                AsignaturaIdNumericUpDown.Focus();
-                return;
-            }
             if (InscripcionIdNumericUpDown.Value == 0)
             {
                 paso = InscripcionesBLL.Guardar(Inscripcion);
@@ -322,27 +326,10 @@ namespace Parcial2_JonathanMaria.UI.Registros
             else
             {
                 MessageBox.Show("Estudiante no encontrado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                NombreTextBox.Text = string.Empty;
                 DescripcionTextBox.Text = string.Empty;
                 CreditosNumericUpDown.Value = 0;
             }
-        }
-
-        private bool ValidarEstudiante(int id)
-        {
-            bool paso = true;
-            MyErrorProvider.Clear();
-            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
-            Estudiantes Estudiante = new Estudiantes();
-            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
-            Estudiante = Repositorio.Buscar(id);
-            if (Estudiante == null || Estudiante.Nombre != NombreTextBox.Text)
-            {
-                MyErrorProvider.SetError(CargarAsignaturaButton, "Debe cargar la asignatura");
-                AsignaturaIdNumericUpDown.Focus();
-                paso = false;
-            }
-            paso = true;
-            return paso;
         }
     }
 }
