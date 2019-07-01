@@ -48,9 +48,9 @@
             // NuevoButton
             // 
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NuevoButton.Location = new System.Drawing.Point(40, 247);
+            this.NuevoButton.Location = new System.Drawing.Point(18, 148);
             this.NuevoButton.Name = "NuevoButton";
-            this.NuevoButton.Size = new System.Drawing.Size(75, 23);
+            this.NuevoButton.Size = new System.Drawing.Size(100, 30);
             this.NuevoButton.TabIndex = 23;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // GuardarButton
             // 
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GuardarButton.Location = new System.Drawing.Point(173, 247);
+            this.GuardarButton.Location = new System.Drawing.Point(148, 148);
             this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(75, 23);
+            this.GuardarButton.Size = new System.Drawing.Size(100, 30);
             this.GuardarButton.TabIndex = 22;
             this.GuardarButton.Text = "Guardar";
             this.GuardarButton.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // EliminarButton
             // 
             this.EliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarButton.Location = new System.Drawing.Point(339, 247);
+            this.EliminarButton.Location = new System.Drawing.Point(271, 148);
             this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(75, 23);
+            this.EliminarButton.Size = new System.Drawing.Size(100, 30);
             this.EliminarButton.TabIndex = 21;
             this.EliminarButton.Text = "Eliminar";
             this.EliminarButton.UseVisualStyleBackColor = true;
@@ -82,7 +82,7 @@
             // 
             this.NombreLabel.AutoSize = true;
             this.NombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreLabel.Location = new System.Drawing.Point(33, 59);
+            this.NombreLabel.Location = new System.Drawing.Point(15, 60);
             this.NombreLabel.Name = "NombreLabel";
             this.NombreLabel.Size = new System.Drawing.Size(63, 16);
             this.NombreLabel.TabIndex = 19;
@@ -92,7 +92,7 @@
             // 
             this.CreditosLabel.AutoSize = true;
             this.CreditosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreditosLabel.Location = new System.Drawing.Point(33, 89);
+            this.CreditosLabel.Location = new System.Drawing.Point(15, 95);
             this.CreditosLabel.Name = "CreditosLabel";
             this.CreditosLabel.Size = new System.Drawing.Size(66, 16);
             this.CreditosLabel.TabIndex = 18;
@@ -101,7 +101,7 @@
             // AsignaturaIdNumericUpDown
             // 
             this.AsignaturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(182, 26);
+            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(128, 22);
             this.AsignaturaIdNumericUpDown.Name = "AsignaturaIdNumericUpDown";
             this.AsignaturaIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AsignaturaIdNumericUpDown.TabIndex = 17;
@@ -109,16 +109,16 @@
             // DescripcionTextBox
             // 
             this.DescripcionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescripcionTextBox.Location = new System.Drawing.Point(189, 56);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(128, 57);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(120, 22);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(243, 22);
             this.DescripcionTextBox.TabIndex = 16;
             // 
             // AsignaturaIdLabel
             // 
             this.AsignaturaIdLabel.AutoSize = true;
             this.AsignaturaIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsignaturaIdLabel.Location = new System.Drawing.Point(26, 28);
+            this.AsignaturaIdLabel.Location = new System.Drawing.Point(15, 25);
             this.AsignaturaIdLabel.Name = "AsignaturaIdLabel";
             this.AsignaturaIdLabel.Size = new System.Drawing.Size(99, 16);
             this.AsignaturaIdLabel.TabIndex = 15;
@@ -127,9 +127,9 @@
             // BuscarButton
             // 
             this.BuscarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarButton.Location = new System.Drawing.Point(339, 28);
+            this.BuscarButton.Location = new System.Drawing.Point(281, 18);
             this.BuscarButton.Name = "BuscarButton";
-            this.BuscarButton.Size = new System.Drawing.Size(75, 23);
+            this.BuscarButton.Size = new System.Drawing.Size(90, 30);
             this.BuscarButton.TabIndex = 13;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             // CreditosNumericUpDown
             // 
             this.CreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreditosNumericUpDown.Location = new System.Drawing.Point(173, 89);
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(128, 93);
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.CreditosNumericUpDown.TabIndex = 24;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 302);
+            this.ClientSize = new System.Drawing.Size(385, 201);
             this.Controls.Add(this.CreditosNumericUpDown);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
@@ -163,7 +163,7 @@
             this.Controls.Add(this.AsignaturaIdLabel);
             this.Controls.Add(this.BuscarButton);
             this.Name = "rAsignaturas";
-            this.Text = "rAsignaturas";
+            this.Text = "Registro de Asignaturas";
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).EndInit();
