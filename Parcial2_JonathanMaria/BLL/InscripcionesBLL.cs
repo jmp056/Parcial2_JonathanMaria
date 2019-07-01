@@ -19,9 +19,8 @@ namespace Parcial2_JonathanMaria.BLL
             {
                 if (db.Inscripciones.Add(Inscripcion) != null)
                 {
+                    db.Estudiantes.Find(Inscripcion.EstudianteId).Balance = Inscripcion.Valor;
                     paso = db.SaveChanges() > 0;
-                    if(paso == true)
-                        db.Estudiantes.Find(Inscripcion.EstudianteId).Balance += Inscripcion.Valor;
                 }
                    
             }
@@ -45,27 +44,25 @@ namespace Parcial2_JonathanMaria.BLL
                 var Anterior = Buscar(Inscripcion.InscripcionId);
                 foreach (var item in Anterior.Detalle)
                 {
-                    if(!Inscripcion.Detalle.ToList().Exists(p => p.AsignaturaId == item.AsignaturaId))
+                    if(!Inscripcion.Detalle.ToList().Exists(p => p.IDID == item.IDID))
                     {
                         db.Entry(item).State = EntityState.Deleted;
                     }
                 }
 
-                foreach (var item in Anterior.Detalle)
+                foreach (var item in Inscripcion.Detalle)
                 {
-                    if (!Inscripcion.Detalle.ToList().Exists(p => p.AsignaturaId == item.AsignaturaId))
+                    if (item.IDID == 0)
                     {
                         db.Entry(item).State = EntityState.Added;
                     }
-                }
-
-                foreach (var item in Anterior.Detalle)
-                {
-                    if (!Inscripcion.Detalle.ToList().Exists(p => p.AsignaturaId == item.AsignaturaId))
+                    else
                     {
                         db.Entry(item).State = EntityState.Modified;
                     }
                 }
+
+                db.Estudiantes.Find(Inscripcion.EstudianteId).Balance = Inscripcion.Valor;
                 db.Entry(Inscripcion).State = EntityState.Modified;
                 paso = db.SaveChanges() > 0;
             }
@@ -90,9 +87,8 @@ namespace Parcial2_JonathanMaria.BLL
                 var eliminar = db.Inscripciones.Find(id);
                 Inscripciones Inscripcion = Buscar(eliminar.InscripcionId);
                 db.Entry(eliminar).State = EntityState.Deleted;
+                db.Estudiantes.Find(Inscripcion.EstudianteId).Balance -= Inscripcion.Valor;
                 paso = db.SaveChanges() > 0;
-                if(paso == true)
-                    db.Estudiantes.Find(Inscripcion.EstudianteId).Balance -= Inscripcion.Valor;
             }
             catch (Exception)
             {

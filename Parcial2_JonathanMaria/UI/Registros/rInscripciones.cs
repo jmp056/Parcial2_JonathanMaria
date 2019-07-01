@@ -104,19 +104,21 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 paso = false;
             }
 
-            if (Estudiante.Nombre != NombreTextBox.Text || NombreTextBox.Text == string.Empty)
+            if (EstudianteIdNumericUpDown.Value == 0 || NombreTextBox.Text == string.Empty)
+            {
+                MyErrorProvider.SetError(EstudianteIdNumericUpDown, "Debe seleccionar un estudiante");
+                EstudianteIdNumericUpDown.Focus();
+                paso = false;
+            }
+
+            if (Estudiante == null || Estudiante.Nombre != NombreTextBox.Text)
             {
                 MyErrorProvider.SetError(CargarEstudianteButton, "Debe cargar un estudiante");
                 CargarEstudianteButton.Focus();
                 paso = false;
             }
 
-            /*if (NombreTextBox.Text == string.Empty)
-            {
-                MyErrorProvider.SetError(NombreTextBox, "Debe seleccionar un estudiante");
-                FechaDeInscripcionDateTimePicker.Focus();
-                paso = false;
-            }*/
+            
             if(PrecioCreditosNumericUpDown.Value < 1 || PrecioCreditosNumericUpDown.Value > 5000)
             {
                 MyErrorProvider.SetError(PrecioCreditosNumericUpDown, "El precio de los creditos debe estar entre 1 y 5,000");
@@ -329,6 +331,21 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 NombreTextBox.Text = string.Empty;
                 DescripcionTextBox.Text = string.Empty;
                 CreditosNumericUpDown.Value = 0;
+            }
+        }
+
+        private void RemoverAsignaturaButton_Click(object sender, EventArgs e)
+        {
+            if (DetalleDataGridView.Rows.Count > 0 && DetalleDataGridView.CurrentRow != null)
+            {
+                Detalle.RemoveAt(DetalleDataGridView.CurrentRow.Index);
+                CargaGrid();
+                decimal val = 0;
+                foreach (DataGridViewRow asig in DetalleDataGridView.Rows)
+                {
+                    val += Convert.ToDecimal(asig.Cells["Precio"].Value);
+                }
+                ValorTextBox.Text = Convert.ToString(val);
             }
         }
     }

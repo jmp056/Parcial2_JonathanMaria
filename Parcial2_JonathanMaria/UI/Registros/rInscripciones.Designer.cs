@@ -178,6 +178,7 @@
             this.RemoverAsignaturaButton.TabIndex = 22;
             this.RemoverAsignaturaButton.Text = "Remover Asignatura";
             this.RemoverAsignaturaButton.UseVisualStyleBackColor = true;
+            this.RemoverAsignaturaButton.Click += new System.EventHandler(this.RemoverAsignaturaButton_Click);
             // 
             // DescripcionTextBox
             // 
