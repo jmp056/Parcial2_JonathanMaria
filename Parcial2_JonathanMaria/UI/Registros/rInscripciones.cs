@@ -1,6 +1,7 @@
 ﻿using Parcial2_JonathanMaria.BLL;
 using Parcial2_JonathanMaria.DAL;
 using Parcial2_JonathanMaria.Entidades;
+using Parcial2_JonathanMaria.UI.Consultas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,6 +77,20 @@ namespace Parcial2_JonathanMaria.UI.Registros
             CargaGrid();
         }
 
+        private bool ExisteEnElDetalle(int id)
+        {
+            bool paso = false ;
+            foreach (DataGridViewRow asignatura in DetalleDataGridView.Rows)
+            {
+                if (id == Convert.ToInt32(asignatura.Cells["AsignaturaId"].Value))
+                {
+                    paso = true;
+                    break;
+                }
+            }
+            return paso;
+        }
+
         private bool Validar()
         {
             MyErrorProvider.Clear();
@@ -106,12 +121,14 @@ namespace Parcial2_JonathanMaria.UI.Registros
             }
             return paso;
         }
+
         private bool ExisteEnLaBaseDeDatos()
         {
             RepositorioBase<Inscripciones> repositorio = new RepositorioBase<Inscripciones>();
             Inscripciones Inscripcion = repositorio.Buscar((int)InscripcionIdNumericUpDown.Value);
             return Inscripcion != null;
         }
+
         private void BuscarButton_Click(object sender, EventArgs e)
         {
             MyErrorProvider.Clear();
@@ -126,8 +143,8 @@ namespace Parcial2_JonathanMaria.UI.Registros
             }
             else
                 MessageBox.Show("Inscripcion no encontrada!");
-
         }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -136,21 +153,44 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         private void AgregarButton_Click(object sender, EventArgs e)
         {
-            if (DetalleDataGridView.DataSource != null)
-                Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
-            this.Detalle.Add(
-                new InscripcionDetalle(
-                iDID: 0,
-                inscripcionId: (int)InscripcionIdNumericUpDown.Value,
-                asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
-                descripcion: DescripcionTextBox.Text,
-                creditos: (int)CreditosNumericUpDown.Value,
-                precio: Convert.ToDecimal(PrecioTextBox.Text)
-            )
-            );
-            decimal val = Convert.ToDecimal(ValorTextBox.Text) + Convert.ToDecimal(PrecioTextBox.Text);
-            ValorTextBox.Text = Convert.ToString(val);
-            CargaGrid();
+            MyErrorProvider.Clear();
+            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
+            int id;
+            Asignaturas Asignatura = new Asignaturas();
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+            Asignatura = Repositorio.Buscar(id);
+            if (Asignatura == null || Asignatura.Descripcion != DescripcionTextBox.Text)
+            {
+                MyErrorProvider.SetError(CargarAsignaturaButton, "Debe cargar la asignatura");
+                AsignaturaIdNumericUpDown.Focus();
+            }
+            else if(PrecioCreditosNumericUpDown.Value < 1 || PrecioCreditosNumericUpDown.Value > 5000)
+            {
+                MyErrorProvider.SetError(PrecioCreditosNumericUpDown, "El precio de los creditos debe estar entre 1 & 5,000");
+                PrecioCreditosNumericUpDown.Focus();
+            }
+            else if (ExisteEnElDetalle(Convert.ToInt32(AsignaturaIdNumericUpDown.Value)) == true)
+            {
+                MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Esta asignatura ya fue agregada!");
+            }
+            else
+            {
+                if (DetalleDataGridView.DataSource != null)
+                    Detalle = (List<InscripcionDetalle>)DetalleDataGridView.DataSource;
+                this.Detalle.Add(
+                    new InscripcionDetalle(
+                    iDID: 0,
+                    inscripcionId: (int)InscripcionIdNumericUpDown.Value,
+                    asignaturaId: (int)AsignaturaIdNumericUpDown.Value,
+                    descripcion: DescripcionTextBox.Text,
+                    creditos: (int)CreditosNumericUpDown.Value,
+                    precio: Convert.ToDecimal(PrecioTextBox.Text)
+                )
+                );
+                decimal val = Convert.ToDecimal(ValorTextBox.Text) + Convert.ToDecimal(PrecioTextBox.Text);
+                ValorTextBox.Text = Convert.ToString(val);
+                CargaGrid();
+            }
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
@@ -160,7 +200,13 @@ namespace Parcial2_JonathanMaria.UI.Registros
             if (!Validar())
                 return;
             Inscripcion = LlenaClase();
-            if(InscripcionIdNumericUpDown.Value == 0)
+            if (ValidarEstudiante(Convert.ToInt32(EstudianteIdNumericUpDown.Value)) == false)
+            {
+                MyErrorProvider.SetError(CargarAsignaturaButton, "Debe cargar la asignatura");
+                AsignaturaIdNumericUpDown.Focus();
+                return;
+            }
+            if (InscripcionIdNumericUpDown.Value == 0)
             {
                 paso = InscripcionesBLL.Guardar(Inscripcion);
                 MessageBox.Show("Guardada!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -187,29 +233,6 @@ namespace Parcial2_JonathanMaria.UI.Registros
 
         }
 
-
-
-        private void PrecioCreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
-        }
-
-        private void CreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
-        }
-
-        private void SeleccionarAsignaturaButton_Click(object sender, EventArgs e)
-        {
-            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
-            int id;
-            Asignaturas Asignatura = new Asignaturas();
-            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
-            Asignatura = Repositorio.Buscar(id);
-            DescripcionTextBox.Text = Asignatura.Descripcion;
-            CreditosNumericUpDown.Value = Asignatura.Creditos;
-        }
-
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Esta seguro que desea eliminar esta inscripcion?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
@@ -229,6 +252,97 @@ namespace Parcial2_JonathanMaria.UI.Registros
                 MessageBox.Show("La inscripcion no pudo ser eliminada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+        }
+
+        private void PrecioCreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
+        }
+
+        private void CreditosNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            PrecioTextBox.Text = Convert.ToString(PrecioCreditosNumericUpDown.Value * CreditosNumericUpDown.Value);
+        }
+
+        private void RegistroAsignaturasButton_Click(object sender, EventArgs e)
+        {
+            rAsignaturas rA= new rAsignaturas();
+            rA.ShowDialog();
+        }
+
+        private void ConsultarAsignaturasButton_Click(object sender, EventArgs e)
+        {
+            cAsignaturas cA = new cAsignaturas();
+            cA.ShowDialog();
+        }
+
+        private void RegistroEstudiantesButton_Click(object sender, EventArgs e)
+        {
+            rEstudiantes rE = new rEstudiantes();
+            rE.ShowDialog();
+        }
+
+        private void ConsultaEstudiantesButton_Click(object sender, EventArgs e)
+            {
+                cEstudiantes cE = new cEstudiantes();
+                cE.ShowDialog();
+            }
+
+        private void CargarAsignaturaButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Asignaturas> Repositorio = new RepositorioBase<Asignaturas>();
+            int id;
+            Asignaturas Asignatura = new Asignaturas();
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+            Asignatura = Repositorio.Buscar(id);
+            if (Asignatura != null)
+            {
+                DescripcionTextBox.Text = Asignatura.Descripcion;
+                CreditosNumericUpDown.Value = Asignatura.Creditos;
+            }
+            else
+            {
+                MessageBox.Show("Asignatura no encontrada", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DescripcionTextBox.Text = string.Empty;
+                CreditosNumericUpDown.Value = 0;
+            }
+        }
+
+        private void CargarEstudianteButton_Click(object sender, EventArgs e)
+        {
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
+            int id;
+            Estudiantes Estudiante = new Estudiantes();
+            int.TryParse(EstudianteIdNumericUpDown.Text, out id);
+            Estudiante = Repositorio.Buscar(id);
+            if (Estudiante != null)
+            {
+                NombreTextBox.Text = Estudiante.Nombre;
+            }
+            else
+            {
+                MessageBox.Show("Estudiante no encontrado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                DescripcionTextBox.Text = string.Empty;
+                CreditosNumericUpDown.Value = 0;
+            }
+        }
+
+        private bool ValidarEstudiante(int id)
+        {
+            bool paso = true;
+            MyErrorProvider.Clear();
+            RepositorioBase<Estudiantes> Repositorio = new RepositorioBase<Estudiantes>();
+            Estudiantes Estudiante = new Estudiantes();
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out id);
+            Estudiante = Repositorio.Buscar(id);
+            if (Estudiante == null || Estudiante.Nombre != NombreTextBox.Text)
+            {
+                MyErrorProvider.SetError(CargarAsignaturaButton, "Debe cargar la asignatura");
+                AsignaturaIdNumericUpDown.Focus();
+                paso = false;
+            }
+            paso = true;
+            return paso;
         }
     }
 }

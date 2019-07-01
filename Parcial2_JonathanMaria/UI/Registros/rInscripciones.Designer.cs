@@ -55,8 +55,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Valor = new System.Windows.Forms.Label();
             this.PrecioTextBox = new System.Windows.Forms.TextBox();
-            this.SeleccionarAsignaturaButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CargarAsignaturaButton = new System.Windows.Forms.Button();
+            this.ConsultarAsignaturasButton = new System.Windows.Forms.Button();
+            this.RegistroAsignaturasButton = new System.Windows.Forms.Button();
+            this.RegistroEstudiantesButton = new System.Windows.Forms.Button();
+            this.ConsultaEstudiantesButton = new System.Windows.Forms.Button();
+            this.CargarEstudianteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.InscripcionIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
@@ -196,7 +201,7 @@
             // 
             this.Creditos.AutoSize = true;
             this.Creditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Creditos.Location = new System.Drawing.Point(360, 210);
+            this.Creditos.Location = new System.Drawing.Point(381, 213);
             this.Creditos.Name = "Creditos";
             this.Creditos.Size = new System.Drawing.Size(66, 16);
             this.Creditos.TabIndex = 27;
@@ -205,7 +210,7 @@
             // AgregarButton
             // 
             this.AgregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarButton.Location = new System.Drawing.Point(570, 227);
+            this.AgregarButton.Location = new System.Drawing.Point(624, 291);
             this.AgregarButton.Name = "AgregarButton";
             this.AgregarButton.Size = new System.Drawing.Size(38, 23);
             this.AgregarButton.TabIndex = 33;
@@ -216,7 +221,7 @@
             // CreditosNumericUpDown
             // 
             this.CreditosNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreditosNumericUpDown.Location = new System.Drawing.Point(432, 210);
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(453, 213);
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(58, 22);
             this.CreditosNumericUpDown.TabIndex = 36;
@@ -280,7 +285,7 @@
             // AsignaturaIdNumericUpDown
             // 
             this.AsignaturaIdNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(137, 211);
+            this.AsignaturaIdNumericUpDown.Location = new System.Drawing.Point(102, 211);
             this.AsignaturaIdNumericUpDown.Name = "AsignaturaIdNumericUpDown";
             this.AsignaturaIdNumericUpDown.Size = new System.Drawing.Size(120, 22);
             this.AsignaturaIdNumericUpDown.TabIndex = 45;
@@ -313,27 +318,87 @@
             this.PrecioTextBox.Size = new System.Drawing.Size(48, 22);
             this.PrecioTextBox.TabIndex = 46;
             // 
-            // SeleccionarAsignaturaButton
-            // 
-            this.SeleccionarAsignaturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SeleccionarAsignaturaButton.Location = new System.Drawing.Point(270, 211);
-            this.SeleccionarAsignaturaButton.Name = "SeleccionarAsignaturaButton";
-            this.SeleccionarAsignaturaButton.Size = new System.Drawing.Size(38, 23);
-            this.SeleccionarAsignaturaButton.TabIndex = 48;
-            this.SeleccionarAsignaturaButton.Text = "Seleccionar Asignatura";
-            this.SeleccionarAsignaturaButton.UseVisualStyleBackColor = true;
-            this.SeleccionarAsignaturaButton.Click += new System.EventHandler(this.SeleccionarAsignaturaButton_Click);
-            // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
+            // 
+            // CargarAsignaturaButton
+            // 
+            this.CargarAsignaturaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CargarAsignaturaButton.Location = new System.Drawing.Point(241, 211);
+            this.CargarAsignaturaButton.Name = "CargarAsignaturaButton";
+            this.CargarAsignaturaButton.Size = new System.Drawing.Size(145, 23);
+            this.CargarAsignaturaButton.TabIndex = 48;
+            this.CargarAsignaturaButton.Text = "Cargar Asignatura";
+            this.CargarAsignaturaButton.UseVisualStyleBackColor = true;
+            this.CargarAsignaturaButton.Click += new System.EventHandler(this.CargarAsignaturaButton_Click);
+            // 
+            // ConsultarAsignaturasButton
+            // 
+            this.ConsultarAsignaturasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarAsignaturasButton.Location = new System.Drawing.Point(517, 245);
+            this.ConsultarAsignaturasButton.Name = "ConsultarAsignaturasButton";
+            this.ConsultarAsignaturasButton.Size = new System.Drawing.Size(186, 23);
+            this.ConsultarAsignaturasButton.TabIndex = 49;
+            this.ConsultarAsignaturasButton.Text = "Consultar asignaturas";
+            this.ConsultarAsignaturasButton.UseVisualStyleBackColor = true;
+            this.ConsultarAsignaturasButton.Click += new System.EventHandler(this.ConsultarAsignaturasButton_Click);
+            // 
+            // RegistroAsignaturasButton
+            // 
+            this.RegistroAsignaturasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroAsignaturasButton.Location = new System.Drawing.Point(517, 211);
+            this.RegistroAsignaturasButton.Name = "RegistroAsignaturasButton";
+            this.RegistroAsignaturasButton.Size = new System.Drawing.Size(186, 23);
+            this.RegistroAsignaturasButton.TabIndex = 50;
+            this.RegistroAsignaturasButton.Text = "Registro de Asignaturas";
+            this.RegistroAsignaturasButton.UseVisualStyleBackColor = true;
+            this.RegistroAsignaturasButton.Click += new System.EventHandler(this.RegistroAsignaturasButton_Click);
+            // 
+            // RegistroEstudiantesButton
+            // 
+            this.RegistroEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroEstudiantesButton.Location = new System.Drawing.Point(372, 96);
+            this.RegistroEstudiantesButton.Name = "RegistroEstudiantesButton";
+            this.RegistroEstudiantesButton.Size = new System.Drawing.Size(186, 23);
+            this.RegistroEstudiantesButton.TabIndex = 52;
+            this.RegistroEstudiantesButton.Text = "Registro de Estudiantes";
+            this.RegistroEstudiantesButton.UseVisualStyleBackColor = true;
+            this.RegistroEstudiantesButton.Click += new System.EventHandler(this.RegistroEstudiantesButton_Click);
+            // 
+            // ConsultaEstudiantesButton
+            // 
+            this.ConsultaEstudiantesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaEstudiantesButton.Location = new System.Drawing.Point(372, 130);
+            this.ConsultaEstudiantesButton.Name = "ConsultaEstudiantesButton";
+            this.ConsultaEstudiantesButton.Size = new System.Drawing.Size(186, 23);
+            this.ConsultaEstudiantesButton.TabIndex = 51;
+            this.ConsultaEstudiantesButton.Text = "Consultar Estudiantes";
+            this.ConsultaEstudiantesButton.UseVisualStyleBackColor = true;
+            this.ConsultaEstudiantesButton.Click += new System.EventHandler(this.ConsultaEstudiantesButton_Click);
+            // 
+            // CargarEstudianteButton
+            // 
+            this.CargarEstudianteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CargarEstudianteButton.Location = new System.Drawing.Point(159, 139);
+            this.CargarEstudianteButton.Name = "CargarEstudianteButton";
+            this.CargarEstudianteButton.Size = new System.Drawing.Size(145, 23);
+            this.CargarEstudianteButton.TabIndex = 53;
+            this.CargarEstudianteButton.Text = "Cargar Estudiante";
+            this.CargarEstudianteButton.UseVisualStyleBackColor = true;
+            this.CargarEstudianteButton.Click += new System.EventHandler(this.CargarEstudianteButton_Click);
             // 
             // rInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 450);
-            this.Controls.Add(this.SeleccionarAsignaturaButton);
+            this.ClientSize = new System.Drawing.Size(749, 450);
+            this.Controls.Add(this.CargarEstudianteButton);
+            this.Controls.Add(this.RegistroEstudiantesButton);
+            this.Controls.Add(this.ConsultaEstudiantesButton);
+            this.Controls.Add(this.RegistroAsignaturasButton);
+            this.Controls.Add(this.ConsultarAsignaturasButton);
+            this.Controls.Add(this.CargarAsignaturaButton);
             this.Controls.Add(this.Valor);
             this.Controls.Add(this.PrecioTextBox);
             this.Controls.Add(this.AsignaturaIdNumericUpDown);
@@ -402,7 +467,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Valor;
         private System.Windows.Forms.TextBox PrecioTextBox;
-        private System.Windows.Forms.Button SeleccionarAsignaturaButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Button CargarAsignaturaButton;
+        private System.Windows.Forms.Button RegistroAsignaturasButton;
+        private System.Windows.Forms.Button ConsultarAsignaturasButton;
+        private System.Windows.Forms.Button RegistroEstudiantesButton;
+        private System.Windows.Forms.Button ConsultaEstudiantesButton;
+        private System.Windows.Forms.Button CargarEstudianteButton;
     }
 }
